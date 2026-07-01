@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Farmhouse Table — A Home Recipe Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFBF5;
+    --surface:#FFFFFF;
+    --tint:#FBF3E7;
+    --tint-2:#F6ECDC;
+    --ink:#2B2622;
+    --ink-soft:#7A7168;
+    --line:#EFE7DA;
+    --line-2:#E4D8C4;
+    --brand:#CE5A3E;      /* warm terracotta-red (JOC-style accent) */
+    --brand-deep:#B44529;
+    --herb:#6E7F5B;       /* sage green */
+    --herb-deep:#586848;
+    --gold:#E2A22C;       /* star / highlight */
+    --radius:16px;
+    --radius-s:10px;
+    --shadow:0 1px 2px rgba(43,38,34,.05), 0 8px 24px rgba(43,38,34,.07);
+    --shadow-lg:0 12px 40px rgba(43,38,34,.16);
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  button{font-family:inherit;cursor:pointer}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(255,251,245,.88);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex;align-items:center;gap:20px;
+    height:70px;
+  }
+  .brand-mark{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
+  .brand-badge{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--brand);color:#fff;flex:none;
+    display:grid;place-items:center;
+  }
+  .brand-badge svg{width:22px;height:22px}
+  .brand-name{
+    font-family:"Fraunces",serif;font-weight:600;font-size:20px;
+    letter-spacing:.2px;line-height:1;
+  }
+  .brand-name small{
+    display:block;font-family:"Karla",sans-serif;font-weight:600;
+    font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-soft);margin-top:4px;
+  }
+  .main-nav{display:flex;gap:26px;align-items:center}
+  .main-nav a{
+    text-decoration:none;font-weight:600;font-size:15px;color:var(--ink);
+    padding:6px 2px;position:relative;
+  }
+  .main-nav a::after{
+    content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;
+    background:var(--brand);transition:right .25s ease;
+  }
+  .main-nav a:hover::after{right:0}
+  .header-search{
+    display:flex;align-items:center;gap:8px;
+    background:var(--surface);border:1px solid var(--line-2);
+    border-radius:999px;padding:8px 14px;min-width:220px;
+  }
+  .header-search svg{width:17px;height:17px;color:var(--ink-soft);flex:none}
+  .header-search input{
+    border:0;outline:0;background:transparent;font-size:14.5px;width:100%;color:var(--ink);
+  }
+  .saved-pill{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--tint);border:1px solid var(--line-2);color:var(--ink);
+    border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;
+    text-decoration:none;
+  }
+  .saved-pill svg{width:16px;height:16px;color:var(--brand)}
+  .nav-toggle{display:none}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 40px}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-weight:700;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--brand-deep);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--brand);border-radius:2px}
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(38px,5.4vw,60px);line-height:1.03;letter-spacing:-.5px;
+    margin:16px 0 0;
+  }
+  .hero h1 em{font-style:italic;color:var(--brand)}
+  .hero-lede{font-size:19px;color:var(--ink-soft);max-width:40ch;margin:18px 0 0}
+  .sig{font-family:"Caveat",cursive;font-size:30px;color:var(--herb-deep);margin-top:18px;line-height:1}
+  .sig span{display:block;font-family:"Karla",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+  .hero-stats{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+  .hero-stats b{font-family:"Fraunces",serif;font-size:26px;font-weight:600;display:block;line-height:1}
+  .hero-stats span{font-size:13px;color:var(--ink-soft);letter-spacing:.02em}
+
+  .hero-card{
+    position:relative;background:var(--surface);border:1px solid var(--line);
+    border-radius:22px;box-shadow:var(--shadow);overflow:hidden;
+  }
+  .hero-card .photo{aspect-ratio:4/3}
+  .hero-card .photo svg{width:100%;height:100%}
+  .hero-card .card-body{padding:20px 22px 22px}
+  .hero-tag{
+    display:inline-block;font-weight:700;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--herb-deep);background:#EEF1E7;
+    padding:5px 11px;border-radius:999px;
+  }
+  .hero-card h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;margin:12px 0 8px;line-height:1.15}
+  .hero-card p{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .hero-meta{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+  .hero-float{
+    position:absolute;top:16px;left:16px;
+    background:rgba(255,251,245,.94);border:1px solid var(--line);
+    border-radius:999px;padding:7px 13px;font-weight:700;font-size:13px;
+    display:flex;align-items:center;gap:7px;box-shadow:var(--shadow);
+  }
+
+  .stars{display:inline-flex;align-items:center;gap:3px;color:var(--gold)}
+  .stars svg{width:15px;height:15px}
+  .rating-num{font-weight:700;font-size:13.5px;color:var(--ink)}
+  .rating-count{font-size:13px;color:var(--ink-soft)}
+  .meta-time{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13.5px;color:var(--ink)}
+  .meta-time svg{width:15px;height:15px;color:var(--ink-soft)}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    border-radius:999px;font-weight:700;font-size:15px;border:1px solid transparent;
+    padding:12px 20px;text-decoration:none;transition:transform .12s ease,background .2s ease,box-shadow .2s;
+  }
+  .btn svg{width:17px;height:17px}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-deep);transform:translateY(-1px)}
+  .btn-ghost{background:var(--surface);border-color:var(--line-2);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep)}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{
+    position:sticky;top:70px;z-index:30;background:var(--paper);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;
+  }
+  .toolbar-inner{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .chips{display:flex;gap:9px;flex-wrap:wrap;margin-right:auto}
+  .chip{
+    border:1px solid var(--line-2);background:var(--surface);color:var(--ink);
+    border-radius:999px;padding:8px 16px;font-weight:600;font-size:14.5px;
+    transition:all .18s ease;
+  }
+  .chip:hover{border-color:var(--brand);color:var(--brand-deep)}
+  .chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+  .result-count{font-size:14px;color:var(--ink-soft);font-weight:600;white-space:nowrap}
+
+  /* ---------- Grid ---------- */
+  .collection{padding:34px 0 60px}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+  .section-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:30px;margin:0;letter-spacing:-.3px}
+  .section-head p{margin:0;color:var(--ink-soft);font-size:15px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow);cursor:pointer;
+    display:flex;flex-direction:column;text-align:left;padding:0;width:100%;
+    transition:transform .16s ease,box-shadow .2s ease,border-color .2s ease;
+    opacity:0;transform:translateY(14px);
+  }
+  .card.in{opacity:1;transform:none}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+  .card:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+  .card .photo{aspect-ratio:4/3;position:relative}
+  .card .photo svg{width:100%;height:100%}
+  .card .fav{
+    position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
+    background:rgba(255,251,245,.92);border:1px solid var(--line);
+    display:grid;place-items:center;box-shadow:var(--shadow);
+  }
+  .card .fav svg{width:18px;height:18px;color:var(--ink-soft);transition:.2s}
+  .card .fav[aria-pressed="true"] svg{color:var(--brand);fill:var(--brand)}
+  .card .cat-flag{
+    position:absolute;left:12px;top:12px;
+    font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:#fff;background:rgba(43,38,34,.62);backdrop-filter:blur(2px);
+    padding:5px 10px;border-radius:999px;
+  }
+  .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .card-body h3{font-family:"Fraunces",serif;font-weight:600;font-size:21px;line-height:1.2;margin:0}
+  .card-body .desc{color:var(--ink-soft);font-size:14.5px;margin:0;flex:1}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:4px;border-top:1px solid var(--line);margin-top:2px}
+  .card-foot .rate{display:inline-flex;align-items:center;gap:5px}
+
+  .empty{
+    text-align:center;padding:60px 20px;color:var(--ink-soft);
+    border:1px dashed var(--line-2);border-radius:var(--radius);background:var(--tint);
+  }
+  .empty b{color:var(--ink);font-family:"Fraunces",serif;font-size:20px;display:block;margin-bottom:6px}
+  .empty button{margin-top:14px}
+
+  /* ---------- Newsletter ---------- */
+  .newsletter{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .nl-inner{padding:48px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .newsletter h2{font-family:"Fraunces",serif;font-weight:600;font-size:30px;margin:0 0 8px}
+  .newsletter p{margin:0;color:var(--ink-soft);max-width:46ch}
+  .nl-form{display:flex;gap:10px;flex-wrap:wrap}
+  .nl-form input{
+    flex:1;min-width:200px;border:1px solid var(--line-2);border-radius:999px;
+    padding:13px 18px;font-size:15px;background:var(--surface);outline:0;color:var(--ink);
+  }
+  .nl-form input:focus{border-color:var(--brand)}
+  .nl-note{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+  /* ---------- Footer ---------- */
+  footer{padding:52px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .foot-about .sig{margin-top:14px}
+  .foot-about p{color:var(--ink-soft);font-size:15px;max-width:40ch}
+  .foot-col h4{font-family:"Karla",sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px}
+  .foot-col a{display:block;text-decoration:none;color:var(--ink);font-weight:600;padding:5px 0;font-size:15px}
+  .foot-col a:hover{color:var(--brand-deep)}
+  .socials{display:flex;gap:10px;margin-top:16px}
+  .socials a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--ink)}
+  .socials a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+  .socials svg{width:18px;height:18px}
+  .foot-base{border-top:1px solid var(--line);margin-top:34px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--ink-soft);font-size:13.5px}
+
+  /* ---------- Modal ---------- */
+  .modal-scrim{
+    position:fixed;inset:0;z-index:60;background:rgba(43,38,34,.5);
+    backdrop-filter:blur(3px);display:none;align-items:flex-start;justify-content:center;
+    padding:34px 16px;overflow-y:auto;
+  }
+  .modal-scrim.open{display:flex}
+  .modal{
+    background:var(--paper);width:min(760px,100%);border-radius:20px;
+    box-shadow:var(--shadow-lg);overflow:hidden;position:relative;
+    animation:pop .28s cubic-bezier(.2,.7,.3,1);
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(20px) scale(.985)}to{opacity:1;transform:none}}
+  .modal-close{
+    position:absolute;top:14px;right:14px;z-index:3;width:40px;height:40px;border-radius:50%;
+    background:rgba(255,251,245,.95);border:1px solid var(--line);display:grid;place-items:center;
+    box-shadow:var(--shadow);
+  }
+  .modal-close svg{width:20px;height:20px}
+  .modal-hero{aspect-ratio:16/8;position:relative}
+  .modal-hero svg{width:100%;height:100%}
+  .modal-body{padding:26px 30px 34px}
+  .crumbs{font-size:12.5px;color:var(--ink-soft);font-weight:600;letter-spacing:.02em;margin-bottom:12px}
+  .crumbs span{color:var(--brand-deep)}
+  .modal-body h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(26px,4vw,34px);line-height:1.1;margin:0 0 12px;letter-spacing:-.3px}
+  .byline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--ink-soft);font-size:14px;margin-bottom:16px}
+  .byline .who{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+  .byline .avatar{width:30px;height:30px;border-radius:50%;background:var(--herb);color:#fff;display:grid;place-items:center;font-family:"Fraunces",serif;font-size:14px}
+  .lede{font-size:17px;color:var(--ink);margin:0 0 20px}
+
+  .meta-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 20px}
+  .meta-cards .m{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+  .meta-cards .m span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+  .meta-cards .m b{display:block;font-family:"Fraunces",serif;font-size:18px;font-weight:600;margin-top:4px}
+
+  .action-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .action-row .btn{padding:10px 16px;font-size:14px}
+  .btn-save[aria-pressed="true"]{background:var(--herb);border-color:var(--herb);color:#fff}
+  .btn-save[aria-pressed="true"] svg{fill:#fff}
+
+  .rc-block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:22px}
+  .rc-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .rc-head h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:0}
+
+  .seg{display:inline-flex;background:var(--tint-2);border-radius:999px;padding:3px;gap:2px}
+  .seg button{border:0;background:transparent;border-radius:999px;padding:7px 14px;font-weight:700;font-size:13px;color:var(--ink-soft)}
+  .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(43,38,34,.12)}
+
+  .scaler-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 4px;color:var(--ink-soft);font-size:14px}
+  .scaler-row .lab{font-weight:700;color:var(--ink)}
+
+  .ing-list{list-style:none;margin:14px 0 0;padding:0}
+  .ing-list li{
+    display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:1px solid var(--line);
+  }
+  .ing-list li:first-child{border-top:0}
+  .ing-check{
+    flex:none;width:22px;height:22px;border:2px solid var(--line-2);border-radius:6px;
+    margin-top:1px;display:grid;place-items:center;background:var(--surface);transition:.15s;
+  }
+  .ing-check svg{width:14px;height:14px;color:#fff;opacity:0}
+  .ing-list li[data-done="1"] .ing-check{background:var(--herb);border-color:var(--herb)}
+  .ing-list li[data-done="1"] .ing-check svg{opacity:1}
+  .ing-list li[data-done="1"] .ing-text{color:var(--ink-soft);text-decoration:line-through}
+  .ing-text{font-size:15.5px;line-height:1.5}
+  .ing-text b{font-weight:700}
+  .amt{color:var(--brand-deep);font-weight:700}
+
+  .steps{list-style:none;counter-reset:step;margin:16px 0 0;padding:0}
+  .steps li{position:relative;padding:0 0 20px 52px;counter-increment:step}
+  .steps li::before{
+    content:counter(step);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;
+    background:var(--brand);color:#fff;font-family:"Fraunces",serif;font-weight:600;font-size:16px;
+    display:grid;place-items:center;
+  }
+  .steps li::after{content:"";position:absolute;left:16px;top:34px;bottom:6px;width:2px;background:var(--line-2)}
+  .steps li:last-child{padding-bottom:0}
+  .steps li:last-child::after{display:none}
+  .steps li .st-title{font-weight:700;display:block;margin-bottom:3px}
+  .steps li p{margin:0;color:var(--ink);font-size:15.5px}
+
+  .tips{background:var(--tint);border:1px solid var(--line-2);border-radius:16px;padding:20px 24px;margin-bottom:22px}
+  .tips h3{font-family:"Fraunces",serif;font-weight:600;font-size:19px;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+  .tips h3 svg{width:20px;height:20px;color:var(--herb-deep)}
+  .tips ul{margin:0;padding-left:20px}
+  .tips li{margin-bottom:8px;font-size:15px}
+  .tips li:last-child{margin-bottom:0}
+
+  .nutri{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .nutri span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--ink-soft)}
+  .nutri span b{color:var(--ink)}
+
+  .more h3{font-family:"Fraunces",serif;font-weight:600;font-size:20px;margin:0 0 14px}
+  .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .more-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);text-align:left;padding:0;width:100%;transition:.15s}
+  .more-card:hover{border-color:var(--brand);transform:translateY(-2px)}
+  .more-card .photo{aspect-ratio:3/2}
+  .more-card .photo svg{width:100%;height:100%}
+  .more-card p{margin:0;padding:9px 11px 11px;font-family:"Fraunces",serif;font-weight:600;font-size:14px;line-height:1.25}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .nl-inner,.foot-grid{grid-template-columns:1fr}
+    .foot-grid{gap:26px}
+    .main-nav,.header-search{display:none}
+    .nav-toggle{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface)}
+    .nav-toggle svg{width:22px;height:22px}
+    .toolbar{top:70px}
+    .meta-cards{grid-template-columns:repeat(2,1fr)}
+    .more-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:560px){
+    body{font-size:16px}
+    .grid{grid-template-columns:1fr}
+    .hero-stats{gap:22px}
+    .modal-body{padding:22px 20px 28px}
+    .rc-block{padding:18px}
+    .more-grid{grid-template-columns:1fr 1fr}
+    .action-row .btn{flex:1}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .card{opacity:1;transform:none}
+  }
+
+  /* ---------- Print (recipe card only) ---------- */
+  @media print{
+    body{background:#fff}
+    body>*{display:none!important}
+    .modal-scrim.open{display:block!important;position:static;padding:0;background:#fff;backdrop-filter:none}
+    .modal{box-shadow:none;width:100%;animation:none}
+    .modal-hero,.modal-close,.action-row,.byline .avatar,.more,.nutri{display:none!important}
+    .rc-block,.tips{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== SVG illustration sprite ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bgWarm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBEFDC"/><stop offset="1" stop-color="#F3E2C6"/></linearGradient>
+    <linearGradient id="bgSage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDF0E4"/><stop offset="1" stop-color="#DCE3CC"/></linearGradient>
+    <linearGradient id="bgRose" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8E6DC"/><stop offset="1" stop-color="#F0CDBB"/></linearGradient>
+  </defs>
+
+  <!-- Sourdough -->
+  <symbol id="ill-sourdough" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgWarm)"/>
+    <ellipse cx="200" cy="235" rx="150" ry="26" fill="#E4C79B" opacity=".6"/>
+    <path d="M96 205c-18-8-30-40-14-72s58-52 118-52 104 22 118 56-4 62-24 68c-30 9-168 12-198 0Z" fill="#C98A4B"/>
+    <path d="M104 196c-14-8-22-34-8-60s52-44 104-44 92 18 104 46-4 52-22 58c-28 9-152 10-178 0Z" fill="#E0A863"/>
+    <path d="M150 120c14 10 34 12 52 4M196 116c16 8 40 6 54-4M170 150c18 10 44 10 64 0" stroke="#A9702F" stroke-width="6" stroke-linecap="round" fill="none" opacity=".75"/>
+    <path d="M200 96c-6 14-6 26 0 40" stroke="#8B5A22" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="150" cy="180" r="3" fill="#B77B37"/><circle cx="250" cy="176" r="3" fill="#B77B37"/><circle cx="210" cy="188" r="3" fill="#B77B37"/>
+  </symbol>
+
+  <!-- Beef stew -->
+  <symbol id="ill-stew" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgWarm)"/>
+    <ellipse cx="200" cy="248" rx="140" ry="22" fill="#E4C79B" opacity=".6"/>
+    <path d="M92 150h216v40c0 44-40 74-108 74S92 234 92 190Z" fill="#7C8A66"/>
+    <path d="M92 150h216v40c0 40-40 66-108 66S92 230 92 190Z" fill="#8E9B77"/>
+    <ellipse cx="200" cy="150" rx="112" ry="26" fill="#8A4B2E"/>
+    <ellipse cx="200" cy="146" rx="104" ry="22" fill="#A65B36"/>
+    <circle cx="168" cy="142" r="12" fill="#C97C3E"/><circle cx="214" cy="150" r="11" fill="#7C3F22"/>
+    <circle cx="196" cy="138" r="9" fill="#D89A4C"/><circle cx="240" cy="142" r="9" fill="#B96B36"/>
+    <circle cx="150" cy="150" r="8" fill="#5E8248"/><circle cx="224" cy="136" r="7" fill="#5E8248"/>
+    <rect x="70" y="176" width="24" height="16" rx="6" fill="#6C795A"/><rect x="306" y="176" width="24" height="16" rx="6" fill="#6C795A"/>
+    <path d="M175 118c-4-12 4-20 0-30M200 114c-4-12 4-20 0-30M225 118c-4-12 4-20 0-30" stroke="#C9A16A" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
+  </symbol>
+
+  <!-- Tomato galette -->
+  <symbol id="ill-galette" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgSage)"/>
+    <ellipse cx="200" cy="238" rx="140" ry="24" fill="#CBD3B6" opacity=".7"/>
+    <path d="M120 100l160 0 22 60c14 40-24 80-102 80s-116-40-102-80Z" fill="#E7B871"/>
+    <path d="M150 118h100l14 44c8 28-20 54-64 54s-72-26-64-54Z" fill="#D89A4C"/>
+    <circle cx="176" cy="150" r="16" fill="#C64231"/><circle cx="176" cy="150" r="9" fill="#E4634B"/>
+    <circle cx="222" cy="146" r="16" fill="#C64231"/><circle cx="222" cy="146" r="9" fill="#E4634B"/>
+    <circle cx="200" cy="180" r="16" fill="#C64231"/><circle cx="200" cy="180" r="9" fill="#E4634B"/>
+    <path d="M164 128c8 4 18 4 26 0M210 124c8 4 18 4 26 0" stroke="#6E7F5B" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M188 196c6-8 16-10 24-4" stroke="#586848" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </symbol>
+
+  <!-- Blackberry jam -->
+  <symbol id="ill-jam" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgRose)"/>
+    <ellipse cx="200" cy="250" rx="120" ry="20" fill="#E4B79F" opacity=".6"/>
+    <rect x="132" y="96" width="136" height="150" rx="24" fill="#EFE0D4" opacity=".55"/>
+    <rect x="140" y="140" width="120" height="102" rx="18" fill="#5B2A45"/>
+    <rect x="140" y="140" width="120" height="102" rx="18" fill="#6E3457" opacity=".9"/>
+    <circle cx="172" cy="180" r="7" fill="#3F1E30"/><circle cx="196" cy="196" r="7" fill="#3F1E30"/><circle cx="224" cy="176" r="7" fill="#3F1E30"/><circle cx="210" cy="212" r="7" fill="#3F1E30"/><circle cx="176" cy="214" r="7" fill="#3F1E30"/>
+    <rect x="124" y="96" width="152" height="30" rx="12" fill="#B44529"/>
+    <rect x="150" y="70" width="100" height="34" rx="10" fill="#CE5A3E"/>
+    <rect x="164" y="152" width="72" height="34" rx="8" fill="#F6ECDC" opacity=".92"/>
+    <path d="M176 170h48M176 178h34" stroke="#7A3B2A" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Cornbread skillet -->
+  <symbol id="ill-cornbread" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgWarm)"/>
+    <ellipse cx="200" cy="242" rx="150" ry="24" fill="#E4C79B" opacity=".6"/>
+    <rect x="300" y="176" width="88" height="20" rx="10" fill="#3B342E"/>
+    <ellipse cx="196" cy="188" rx="128" ry="52" fill="#2C2622"/>
+    <ellipse cx="196" cy="180" rx="120" ry="48" fill="#3B342E"/>
+    <ellipse cx="196" cy="174" rx="106" ry="40" fill="#EAB95E"/>
+    <path d="M196 134v80M132 174h128M150 150l92 48M242 150l-92 48" stroke="#C98A3E" stroke-width="4" opacity=".65"/>
+    <ellipse cx="196" cy="170" rx="106" ry="36" fill="none" stroke="#D8A64E" stroke-width="4"/>
+    <circle cx="170" cy="164" r="3" fill="#B87A2E"/><circle cx="220" cy="180" r="3" fill="#B87A2E"/><circle cx="196" cy="188" r="3" fill="#B87A2E"/>
+  </symbol>
+
+  <!-- Roast chicken -->
+  <symbol id="ill-chicken" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgWarm)"/>
+    <ellipse cx="200" cy="238" rx="150" ry="26" fill="#E4C79B" opacity=".6"/>
+    <ellipse cx="200" cy="196" rx="120" ry="24" fill="#E9D3A6"/>
+    <path d="M118 188c0-46 36-78 82-78s82 32 82 78c0 20-30 34-82 34s-82-14-82-34Z" fill="#C98A4B"/>
+    <path d="M128 184c0-40 32-68 72-68s72 28 72 68c0 16-30 28-72 28s-72-12-72-28Z" fill="#DBA25C"/>
+    <path d="M150 150c14 8 34 10 50 4M212 148c14 8 32 6 44-2" stroke="#A9702F" stroke-width="5" stroke-linecap="round" fill="none" opacity=".6"/>
+    <path d="M120 170l-32 18 8 14 30-14ZM280 170l32 18-8 14-30-14Z" fill="#C98A4B"/>
+    <circle cx="86" cy="198" r="8" fill="#E9D3A6"/><circle cx="314" cy="198" r="8" fill="#E9D3A6"/>
+    <path d="M170 122c4-8 12-8 16 0M210 118c4-8 12-8 16 0" stroke="#6E7F5B" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <circle cx="150" cy="206" r="6" fill="#B7551F"/><circle cx="248" cy="206" r="6" fill="#B7551F"/>
+  </symbol>
+
+  <!-- Baked oats -->
+  <symbol id="ill-oats" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgSage)"/>
+    <ellipse cx="200" cy="242" rx="140" ry="22" fill="#CBD3B6" opacity=".7"/>
+    <path d="M104 166h192v20c0 40-42 66-96 66s-96-26-96-66Z" fill="#EEE6D6"/>
+    <ellipse cx="200" cy="166" rx="96" ry="24" fill="#D9C29A"/>
+    <ellipse cx="200" cy="162" rx="88" ry="20" fill="#E4D0AA"/>
+    <path d="M170 158c8-14 20-22 34-12M196 156c10-10 24-8 30 2" fill="none" stroke="#B98C4E" stroke-width="4" stroke-linecap="round"/>
+    <path d="M180 150c10-16 22-6 8 8M214 152c12-14 22-2 6 10" fill="#C97C3E"/>
+    <circle cx="176" cy="164" r="4" fill="#8B5A22"/><circle cx="224" cy="160" r="4" fill="#8B5A22"/><circle cx="200" cy="170" r="4" fill="#8B5A22"/>
+    <path d="M150 138c-6-10 2-18 8-10" stroke="#6E7F5B" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </symbol>
+
+  <!-- Lemon olive oil cake -->
+  <symbol id="ill-cake" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgWarm)"/>
+    <ellipse cx="200" cy="244" rx="140" ry="22" fill="#E4C79B" opacity=".6"/>
+    <ellipse cx="200" cy="212" rx="120" ry="20" fill="#E5CFA6"/>
+    <path d="M92 150h216v56c0 18-48 32-108 32S92 224 92 206Z" fill="#E9C46A"/>
+    <ellipse cx="200" cy="150" rx="108" ry="26" fill="#F1D486"/>
+    <ellipse cx="200" cy="146" rx="108" ry="24" fill="#F7E7B0"/>
+    <path d="M110 150c20 12 160 12 180 0" fill="none" stroke="#E4B85A" stroke-width="4" opacity=".6"/>
+    <circle cx="166" cy="140" r="14" fill="#F2C230"/><path d="M158 140c4-6 12-6 16 0" stroke="#D9A400" stroke-width="3" fill="none"/>
+    <circle cx="236" cy="140" r="14" fill="#F2C230"/><path d="M228 140c4-6 12-6 16 0" stroke="#D9A400" stroke-width="3" fill="none"/>
+    <path d="M198 128c-4-8 2-16 8-8M206 132c8-8 16 0 6 8" fill="#6E7F5B"/>
+  </symbol>
+
+  <!-- Anko (red bean paste) -->
+  <symbol id="ill-anko" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="url(#bgRose)"/>
+    <ellipse cx="200" cy="244" rx="140" ry="22" fill="#E4B79F" opacity=".6"/>
+    <path d="M112 172h176v14c0 38-40 62-88 62s-88-24-88-62Z" fill="#F3ECE2"/>
+    <ellipse cx="200" cy="172" rx="88" ry="22" fill="#E4DACB"/>
+    <ellipse cx="200" cy="170" rx="80" ry="18" fill="#5B2A2E"/>
+    <ellipse cx="200" cy="168" rx="74" ry="15" fill="#6E3335"/>
+    <circle cx="172" cy="166" r="6" fill="#431E22"/><circle cx="196" cy="172" r="6" fill="#431E22"/><circle cx="222" cy="164" r="6" fill="#431E22"/><circle cx="208" cy="176" r="5" fill="#431E22"/><circle cx="180" cy="176" r="5" fill="#431E22"/>
+    <path d="M150 210c-10-4-12-14-4-18M258 210c10-4 12-14 4-18" stroke="#C9B7A0" stroke-width="4" fill="none"/>
+    <path d="M232 120l40-16M240 132l40-8" stroke="#8B5A5E" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="150" cy="130" r="6" fill="#C64231"/><circle cx="164" cy="122" r="6" fill="#C64231"/>
+  </symbol>
+</svg>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand-mark" href="#top">
+      <span class="brand-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 9h16M6 9V6a3 3 0 013-3h0M12 9V4M18 9V6a3 3 0 00-3-3h0M5 9l1.5 9a2 2 0 002 1.7h7a2 2 0 002-1.7L19 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-name">The Farmhouse Table<small>Home Recipe Collection</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#collection">Recipes</a>
+      <a href="#collection" data-jump-cat="Baking">Baking</a>
+      <a href="#collection" data-jump-cat="Mains">Mains</a>
+      <a href="#collection" data-jump-cat="Sweets">Sweets</a>
+      <a href="#about">About</a>
+    </nav>
+    <label class="header-search" for="search">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search recipes…" autocomplete="off">
+    </label>
+    <a class="saved-pill" href="#collection" id="savedPill">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15l-7-4-7 4V5a1 1 0 011-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <span id="savedCount">0</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Search recipes">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Slow food, made at home</span>
+      <h1>Honest recipes from a <em>well-worn</em> kitchen.</h1>
+      <p class="hero-lede">A growing collection of the dishes I actually cook, tested until they're foolproof, written for real weeknights and unhurried weekends.</p>
+      <div class="hero-stats">
+        <div><b id="statCount">9</b><span>tested recipes</span></div>
+        <div><b>4.8★</b><span>reader average</span></div>
+        <div><b>5</b><span>simple categories</span></div>
+      </div>
+      <p class="sig">Teresa<span>Cook &amp; keeper of the table</span></p>
+    </div>
+
+    <button class="hero-card" id="heroFeature" aria-label="Open featured recipe">
+      <div class="photo"><svg><use href="#ill-stew"/></svg></div>
+      <span class="hero-float">
+        <svg viewBox="0 0 24 24" fill="none" style="width:15px;height:15px"><circle cx="12" cy="12" r="9" stroke="#CE5A3E" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="#CE5A3E" stroke-width="1.8" stroke-linecap="round"/></svg>
+        3 hr
+      </span>
+      <div class="card-body">
+        <span class="hero-tag">Featured · Mains</span>
+        <h3>Slow-Braised Beef &amp; Root Vegetable Stew</h3>
+        <p>The one everyone asks for when it turns cold. Fork-tender beef, sweet roots, a glossy red-wine gravy.</p>
+        <div class="hero-meta">
+          <span class="stars" aria-label="4.9 out of 5">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </span>
+          <span class="rating-num">4.9</span><span class="rating-count">· 214 reviews</span>
+        </div>
+      </div>
+    </button>
+  </div>
+</section>
+
+<!-- ===== Toolbar / filters ===== -->
+<div class="toolbar">
+  <div class="wrap toolbar-inner">
+    <div class="chips" id="chips" role="group" aria-label="Filter by category">
+      <button class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="Breakfast" aria-pressed="false">Breakfast</button>
+      <button class="chip" data-cat="Mains" aria-pressed="false">Mains</button>
+      <button class="chip" data-cat="Baking" aria-pressed="false">Baking</button>
+      <button class="chip" data-cat="Preserves" aria-pressed="false">Preserves</button>
+      <button class="chip" data-cat="Sweets" aria-pressed="false">Sweets</button>
+    </div>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+</div>
+
+<!-- ===== Collection grid ===== -->
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="gridTitle">The whole collection</h2>
+      <p>Tap any card for the full recipe, checklist &amp; serving scaler.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <b>No recipes match that yet.</b>
+      Try another category or a different search.
+      <div><button class="btn btn-ghost" id="clearFilters">Clear filters</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Newsletter ===== -->
+<section class="newsletter">
+  <div class="wrap nl-inner">
+    <div>
+      <h2>A new recipe in your inbox, most Sundays.</h2>
+      <p>No fuss, no 2,000-word life stories. Just the recipe, a photo, and one thing I learned making it.</p>
+    </div>
+    <div>
+      <div class="nl-form">
+        <input type="email" id="nlEmail" placeholder="you@kitchen.com" aria-label="Email address">
+        <button class="btn btn-primary" id="nlBtn">Subscribe</button>
+      </div>
+      <p class="nl-note" id="nlNote">Free. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer id="about">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <span class="brand-name" style="font-size:22px">The Farmhouse Table</span>
+        <p>Hi, I'm Teresa. I cook the way my grandmother did, slowly, seasonally, and with whatever's on the counter. Everything here is tested in a real home kitchen until it works every time.</p>
+        <p class="sig">Teresa<span>Since the kitchen was ours</span></p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 00-3.3 17.4c-.1-.8-.2-2 0-2.8l1-4.4s-.3-.5-.3-1.3c0-1.2.7-2.1 1.6-2.1.7 0 1.1.6 1.1 1.2 0 .8-.5 1.9-.7 3-.2.9.4 1.6 1.3 1.6 1.6 0 2.7-2 2.7-4.4 0-1.8-1.2-3.2-3.5-3.2a4 4 0 00-4.2 4c0 .8.3 1.4.6 1.8l-.3 1c0 .2-.2.3-.4.2-1-.4-1.6-1.9-1.6-3 0-2.5 1.8-4.7 5.2-4.7 2.7 0 4.9 2 4.9 4.6 0 2.7-1.7 4.9-4.1 4.9-.8 0-1.6-.4-1.8-.9l-.5 1.9c-.2.7-.7 1.6-1 2.1A9 9 0 1012 3z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M11 9.5l4 2.5-4 2.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Categories</h4>
+        <a href="#collection" data-jump-cat="Breakfast">Breakfast</a>
+        <a href="#collection" data-jump-cat="Mains">Mains</a>
+        <a href="#collection" data-jump-cat="Baking">Baking</a>
+        <a href="#collection" data-jump-cat="Preserves">Preserves</a>
+        <a href="#collection" data-jump-cat="Sweets">Sweets</a>
+      </div>
+      <div class="foot-col">
+        <h4>The Kitchen</h4>
+        <a href="#about">About Teresa</a>
+        <a href="#collection">All recipes</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#">Pantry notes</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="year"></span> The Farmhouse Table. Made with butter &amp; patience.</span>
+      <span>A demo recipe collection · swap in your own photos any time.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Recipe modal ===== -->
+<div class="modal-scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <article class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close recipe">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#2B2622" stroke-width="1.9" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-hero" id="mHero"><svg><use href="#ill-stew" id="mHeroUse"/></svg></div>
+    <div class="modal-body" id="printArea">
+      <div class="crumbs">Home » Recipes » <span id="mCrumbCat">Mains</span></div>
+      <h2 id="mTitle">Recipe</h2>
+      <div class="byline">
+        <span class="who"><span class="avatar">T</span> by Teresa</span>
+        <span class="stars" id="mStars" aria-hidden="true"></span>
+        <span class="rating-num" id="mRating">4.8</span>
+        <span class="rating-count" id="mReviews">· 100 reviews</span>
+      </div>
+      <p class="lede" id="mLede"></p>
+
+      <div class="meta-cards">
+        <div class="m"><span>Prep</span><b id="mPrep">10 min</b></div>
+        <div class="m"><span>Cook</span><b id="mCook">30 min</b></div>
+        <div class="m"><span>Total</span><b id="mTotal">40 min</b></div>
+        <div class="m"><span>Serves</span><b id="mServes">4</b></div>
+      </div>
+
+      <div class="action-row">
+        <button class="btn btn-ghost btn-save" id="mSave" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15l-7-4-7 4V5a1 1 0 011-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span id="mSaveLabel">Save</span>
+        </button>
+        <button class="btn btn-ghost" id="mCookMode" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Cook Mode
+        </button>
+        <button class="btn btn-ghost" id="mPrint">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 9V4h10v5M7 18H5a1 1 0 01-1-1v-5a1 1 0 011-1h14a1 1 0 011 1v5a1 1 0 01-1 1h-2M7 14h10v6H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          Print
+        </button>
+      </div>
+
+      <div class="rc-block">
+        <div class="rc-head">
+          <h3>Ingredients</h3>
+          <div class="seg" id="unitSeg" role="group" aria-label="Units">
+            <button data-unit="us" aria-pressed="true">US</button>
+            <button data-unit="metric" aria-pressed="false">Metric</button>
+          </div>
+        </div>
+        <div class="scaler-row">
+          <span class="lab">Scale</span>
+          <div class="seg" id="scaleSeg" role="group" aria-label="Scale servings">
+            <button data-scale="1" aria-pressed="true">1×</button>
+            <button data-scale="2" aria-pressed="false">2×</button>
+            <button data-scale="3" aria-pressed="false">3×</button>
+          </div>
+          <span id="scaleServes"></span>
+        </div>
+        <ul class="ing-list" id="ingList"></ul>
+      </div>
+
+      <div class="rc-block">
+        <h3 style="font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin:0 0 4px">Instructions</h3>
+        <ol class="steps" id="stepList"></ol>
+      </div>
+
+      <div class="tips" id="tipsBlock">
+        <h3><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a6 6 0 00-3.6 10.8c.6.5 1 1.2 1 2v.2h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0012 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.4 20h5.2M10 22h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg> Teresa's tips</h3>
+        <ul id="tipsList"></ul>
+      </div>
+
+      <div class="nutri" id="nutri"></div>
+
+      <div class="more">
+        <h3>You might also like</h3>
+        <div class="more-grid" id="moreGrid"></div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+/* ============================================================
+   THE FARMHOUSE TABLE — recipe data + interactions
+   To use your own photos later: give a recipe an `img` URL and
+   the card/modal will show it instead of the illustration.
+   ============================================================ */
+const RECIPES = [
+  {
+    id:"stew", cat:"Mains", ill:"ill-stew",
+    title:"Slow-Braised Beef & Root Vegetable Stew",
+    desc:"Fork-tender beef and sweet winter roots in a glossy red-wine gravy.",
+    rating:4.9, reviews:214, prep:"25 min", cook:"2 hr 35 min", total:"3 hr", serves:6,
+    lede:"This is the pot I put on when the afternoon turns grey. Brown the beef properly, let it go low and slow, and the gravy turns deep and glossy on its own.",
+    ingredients:[
+      {name:"beef chuck, cubed", us:[1.5,"lb"], metric:[700,"g"]},
+      {name:"plain flour", us:[3,"tbsp"], metric:[24,"g"]},
+      {name:"olive oil", us:[2,"tbsp"], metric:[30,"ml"]},
+      {name:"onion, diced", us:[1,""], metric:[1,""]},
+      {name:"garlic cloves, crushed", us:[3,""], metric:[3,""]},
+      {name:"carrots, chunked", us:[3,""], metric:[3,""]},
+      {name:"parsnips, chunked", us:[2,""], metric:[2,""]},
+      {name:"tomato paste", us:[2,"tbsp"], metric:[32,"g"]},
+      {name:"dry red wine", us:[1,"cup"], metric:[240,"ml"]},
+      {name:"beef stock", us:[2,"cup"], metric:[480,"ml"]},
+      {name:"bay leaves", us:[2,""], metric:[2,""]},
+      {name:"fresh thyme", us:[4,"sprig"], metric:[4,"sprig"]}
+    ],
+    steps:[
+      ["Dry & dredge","Pat the beef very dry, season well, and toss in the flour until lightly coated."],
+      ["Sear in batches","Heat the oil and brown the beef hard on all sides, in batches so it colours rather than steams. Set aside."],
+      ["Build the base","Soften the onion in the same pot, add garlic and tomato paste, and cook a minute until it smells sweet and jammy."],
+      ["Deglaze","Pour in the wine, scraping up every brown bit from the bottom, and let it reduce by half."],
+      ["Braise low","Return the beef, add stock, bay, and thyme, cover, and simmer gently for 2 hours until the beef is nearly tender."],
+      ["Add the roots","Stir in carrots and parsnips and cook uncovered 30–40 minutes more, until everything is soft and the gravy coats a spoon."]
+    ],
+    tips:["Brown deeply — that dark crust is where the whole flavour of the gravy comes from.","No wine? Use all stock plus a spoon of balsamic for depth.","Even better the next day; the flavour rounds out overnight."],
+    nutri:{Calories:"absent",Protein:"38 g",Carbs:"22 g",Fat:"19 g"}
+  },
+  {
+    id:"sourdough", cat:"Baking", ill:"ill-sourdough",
+    title:"No-Knead Rustic Sourdough Loaf",
+    desc:"A crackly crust and open, tangy crumb from a fuss-free overnight rise.",
+    rating:4.8, reviews:301, prep:"20 min", cook:"45 min", total:"18 hr", serves:8,
+    lede:"You don't need to knead and you don't need to hover. Time does the work here — mix in the evening, bake to a deep crust the next day.",
+    ingredients:[
+      {name:"bread flour", us:[3.5,"cup"], metric:[500,"g"]},
+      {name:"active sourdough starter", us:[0.5,"cup"], metric:[100,"g"]},
+      {name:"warm water", us:[1.5,"cup"], metric:[350,"ml"]},
+      {name:"fine sea salt", us:[2,"tsp"], metric:[10,"g"]},
+      {name:"rice flour, for dusting", us:[2,"tbsp"], metric:[16,"g"]}
+    ],
+    steps:[
+      ["Mix the dough","Stir starter into the warm water, then mix in the flour and salt until no dry patches remain. It will be shaggy."],
+      ["Fold, don't knead","Over the next 2 hours, do four sets of stretch-and-folds, 30 minutes apart, then cover."],
+      ["Long rise","Let it rise at room temperature until roughly doubled and airy, about 8–12 hours."],
+      ["Shape","Tip out, shape into a tight round, and rest seam-up in a floured banneton for 1 hour."],
+      ["Preheat hot","Heat a Dutch oven at 475°F / 245°C for 30 minutes so it's screaming hot."],
+      ["Score & bake","Score the top, bake covered 25 minutes, then uncovered 18–20 minutes until deeply golden. Cool fully before slicing."]
+    ],
+    tips:["Your starter should be bubbly and float in water before you begin.","Cool completely — cutting warm bread makes the crumb gummy.","A cast-iron pot traps steam for that bakery crust."],
+    nutri:{Calories:"absent",Protein:"9 g",Carbs:"48 g",Fat:"1 g"}
+  },
+  {
+    id:"galette", cat:"Baking", ill:"ill-galette",
+    title:"Summer Tomato & Basil Galette",
+    desc:"A free-form tart with a buttery crust, ripe tomatoes and melting cheese.",
+    rating:4.7, reviews:156, prep:"25 min", cook:"40 min", total:"1 hr 20 min", serves:6,
+    lede:"The lazy cook's tart — no tin, no fluting, just a rustic fold of pastry around the best tomatoes you can find. Salt them first so the crust stays crisp.",
+    ingredients:[
+      {name:"plain flour", us:[1.25,"cup"], metric:[180,"g"]},
+      {name:"cold butter, cubed", us:[0.5,"cup"], metric:[115,"g"]},
+      {name:"ice water", us:[3,"tbsp"], metric:[45,"ml"]},
+      {name:"ripe tomatoes, sliced", us:[1.25,"lb"], metric:[560,"g"]},
+      {name:"ricotta", us:[0.75,"cup"], metric:[185,"g"]},
+      {name:"grated parmesan", us:[0.33,"cup"], metric:[35,"g"]},
+      {name:"fresh basil", us:[0.5,"cup"], metric:[12,"g"]},
+      {name:"egg, for glaze", us:[1,""], metric:[1,""]}
+    ],
+    steps:[
+      ["Make the pastry","Rub butter into the flour with a pinch of salt until crumbly, add ice water, and bring together. Chill 30 minutes."],
+      ["Salt the tomatoes","Lay the slices on paper towels, salt lightly, and leave 15 minutes to draw out water. Pat dry."],
+      ["Roll & fill","Roll pastry into a rough circle, spread ricotta and parmesan in the centre, leaving a 2-inch border."],
+      ["Arrange","Fan the tomato slices over the cheese and tuck torn basil between them."],
+      ["Fold & glaze","Fold the border up over the edge, pleating as you go, and brush the pastry with beaten egg."],
+      ["Bake","Bake at 400°F / 200°C for 38–42 minutes until the crust is deep gold. Finish with more basil."]
+    ],
+    tips:["Salting the tomatoes is the difference between crisp and soggy — don't skip it.","Keep the butter cold; warm pastry loses its flake.","Great warm or at room temperature for a picnic."],
+    nutri:{Calories:"absent",Protein:"11 g",Carbs:"26 g",Fat:"22 g"}
+  },
+  {
+    id:"chicken", cat:"Mains", ill:"ill-chicken",
+    title:"Herb-Roasted Garlic Chicken",
+    desc:"Crisp-skinned roast chicken with lemon, garlic and a pan of soft herbs.",
+    rating:4.9, reviews:428, prep:"15 min", cook:"1 hr 15 min", total:"1 hr 30 min", serves:4,
+    lede:"The Sunday anchor. Butter under the skin, a lemon in the cavity, and a hot oven — that's the whole trick to juicy meat and shatter-crisp skin.",
+    ingredients:[
+      {name:"whole chicken", us:[4,"lb"], metric:[1.8,"kg"]},
+      {name:"softened butter", us:[4,"tbsp"], metric:[57,"g"]},
+      {name:"garlic cloves, minced", us:[4,""], metric:[4,""]},
+      {name:"lemon, halved", us:[1,""], metric:[1,""]},
+      {name:"fresh rosemary", us:[2,"tbsp"], metric:[6,"g"]},
+      {name:"fresh thyme", us:[1,"tbsp"], metric:[3,"g"]},
+      {name:"olive oil", us:[1,"tbsp"], metric:[15,"ml"]},
+      {name:"sea salt", us:[1.5,"tsp"], metric:[9,"g"]}
+    ],
+    steps:[
+      ["Dry the bird","Pat the chicken completely dry, inside and out — dry skin is crisp skin."],
+      ["Herb butter","Mash butter with garlic, chopped herbs, and salt, then push most of it under the breast skin."],
+      ["Season & stuff","Rub the outside with oil and the rest of the butter, and tuck the lemon halves inside."],
+      ["Truss loosely","Tie the legs together and tuck the wing tips under so it roasts evenly."],
+      ["Roast hot","Roast at 425°F / 220°C for about 1 hour 15 minutes, until the thigh juices run clear (74°C internal)."],
+      ["Rest","Rest 15 minutes before carving so the juices settle back into the meat."]
+    ],
+    tips:["Let the chicken sit uncovered in the fridge a few hours first for even crispier skin.","Save the carcass — it makes the beef stew's cousin, a golden stock.","No thermometer? Juices at the thigh joint should run clear, not pink."],
+    nutri:{Calories:"absent",Protein:"41 g",Carbs:"2 g",Fat:"28 g"}
+  },
+  {
+    id:"oats", cat:"Breakfast", ill:"ill-oats",
+    title:"Baked Oats with Pear & Honey",
+    desc:"Warm, custardy baked oats with soft pears and a drizzle of honey.",
+    rating:4.6, reviews:189, prep:"10 min", cook:"35 min", total:"45 min", serves:4,
+    lede:"Somewhere between porridge and cake. Assemble it half-asleep, slide it in the oven, and breakfast makes itself while the coffee brews.",
+    ingredients:[
+      {name:"rolled oats", us:[2,"cup"], metric:[180,"g"]},
+      {name:"milk", us:[2,"cup"], metric:[480,"ml"]},
+      {name:"egg", us:[1,""], metric:[1,""]},
+      {name:"honey", us:[3,"tbsp"], metric:[63,"g"]},
+      {name:"ripe pears, sliced", us:[2,""], metric:[2,""]},
+      {name:"baking powder", us:[1,"tsp"], metric:[5,"g"]},
+      {name:"ground cinnamon", us:[1,"tsp"], metric:[3,"g"]},
+      {name:"vanilla extract", us:[1,"tsp"], metric:[5,"ml"]}
+    ],
+    steps:[
+      ["Heat the oven","Preheat to 350°F / 180°C and butter a small baking dish."],
+      ["Whisk the custard","Whisk milk, egg, honey, vanilla, cinnamon, and baking powder until smooth."],
+      ["Combine","Stir in the oats and half the pears, then pour into the dish."],
+      ["Top","Fan the remaining pear slices over the surface and drizzle with a little extra honey."],
+      ["Bake","Bake 32–36 minutes until set in the middle and golden at the edges. Rest 5 minutes before spooning out."]
+    ],
+    tips:["Swap pears for apple or berries with the seasons.","A spoon of yoghurt on top turns it into pudding.","Leftovers reheat beautifully — make a double batch."],
+    nutri:{Calories:"absent",Protein:"12 g",Carbs:"52 g",Fat:"8 g"}
+  },
+  {
+    id:"cornbread", cat:"Baking", ill:"ill-cornbread",
+    title:"Buttermilk Skillet Cornbread",
+    desc:"Golden, tender cornbread with crisp edges from a screaming-hot skillet.",
+    rating:4.8, reviews:224, prep:"10 min", cook:"25 min", total:"35 min", serves:8,
+    lede:"Poured into a hot, buttered skillet so the edges fry crisp while the middle stays soft. Barely sweet — the way it's meant to go beside a bowl of stew.",
+    ingredients:[
+      {name:"cornmeal", us:[1.5,"cup"], metric:[210,"g"]},
+      {name:"plain flour", us:[1,"cup"], metric:[125,"g"]},
+      {name:"buttermilk", us:[1.5,"cup"], metric:[360,"ml"]},
+      {name:"eggs", us:[2,""], metric:[2,""]},
+      {name:"melted butter", us:[6,"tbsp"], metric:[85,"g"]},
+      {name:"honey", us:[2,"tbsp"], metric:[42,"g"]},
+      {name:"baking powder", us:[1,"tbsp"], metric:[14,"g"]},
+      {name:"fine salt", us:[1,"tsp"], metric:[6,"g"]}
+    ],
+    steps:[
+      ["Heat the skillet","Put a cast-iron skillet in the oven and preheat both to 425°F / 220°C."],
+      ["Dry then wet","Whisk the dry ingredients in one bowl; whisk buttermilk, eggs, honey, and most of the butter in another."],
+      ["Combine gently","Fold wet into dry until just barely mixed — a few lumps are fine, overmixing makes it tough."],
+      ["Sizzle","Carefully swirl the last of the butter into the hot skillet, then pour in the batter — it should hiss."],
+      ["Bake","Bake 22–25 minutes until golden and a skewer comes out clean. Serve warm, straight from the pan."]
+    ],
+    tips:["The hot skillet is everything — that's what crisps the edge.","No buttermilk? Stir a spoon of lemon juice into regular milk and wait 5 minutes.","Add a diced chilli or a handful of corn for a savoury twist."],
+    nutri:{Calories:"absent",Protein:"7 g",Carbs:"38 g",Fat:"13 g"}
+  },
+  {
+    id:"cake", cat:"Sweets", ill:"ill-cake",
+    title:"Lemon & Olive Oil Cake",
+    desc:"A moist, fragrant cake with bright lemon and a soft olive-oil crumb.",
+    rating:4.9, reviews:267, prep:"15 min", cook:"45 min", total:"1 hr", serves:10,
+    lede:"Olive oil keeps this cake moist for days and lets the lemon sing. One bowl, a whisk, and no mixer required.",
+    ingredients:[
+      {name:"plain flour", us:[1.75,"cup"], metric:[220,"g"]},
+      {name:"sugar", us:[1,"cup"], metric:[200,"g"]},
+      {name:"extra-virgin olive oil", us:[0.75,"cup"], metric:[180,"ml"]},
+      {name:"eggs", us:[3,""], metric:[3,""]},
+      {name:"milk", us:[0.5,"cup"], metric:[120,"ml"]},
+      {name:"lemons, zested & juiced", us:[2,""], metric:[2,""]},
+      {name:"baking powder", us:[1.5,"tsp"], metric:[7,"g"]},
+      {name:"fine salt", us:[0.5,"tsp"], metric:[3,"g"]}
+    ],
+    steps:[
+      ["Prep the tin","Preheat to 350°F / 180°C and line a 9-inch round tin."],
+      ["Whisk the wet","Whisk sugar, eggs, and lemon zest until pale, then stream in the olive oil, milk, and lemon juice."],
+      ["Fold the dry","Sift in flour, baking powder, and salt, and fold until just combined."],
+      ["Bake","Pour in and bake 42–46 minutes until golden and a skewer comes out clean."],
+      ["Finish","Cool in the tin 10 minutes, then dust with sugar or brush with a little warmed honey."]
+    ],
+    tips:["Use a fruity olive oil you'd happily eat — it's the headline flavour.","Zest before you juice; it's far easier that way.","Keeps moist under a cloche for 3–4 days."],
+    nutri:{Calories:"absent",Protein:"5 g",Carbs:"34 g",Fat:"16 g"}
+  },
+  {
+    id:"jam", cat:"Preserves", ill:"ill-jam",
+    title:"Wild Blackberry Jam",
+    desc:"A small-batch jam with deep berry flavour and a soft, spoonable set.",
+    rating:4.7, reviews:143, prep:"15 min", cook:"30 min", total:"45 min", serves:24,
+    lede:"Made the old way with just fruit, sugar, and lemon — no pectin sachets. Small batches set best and keep the flavour bright and fresh.",
+    ingredients:[
+      {name:"blackberries", us:[4,"cup"], metric:[600,"g"]},
+      {name:"sugar", us:[2,"cup"], metric:[400,"g"]},
+      {name:"lemon, juiced", us:[1,""], metric:[1,""]},
+      {name:"water", us:[2,"tbsp"], metric:[30,"ml"]}
+    ],
+    steps:[
+      ["Chill a plate","Put a small plate in the freezer — you'll use it to test the set."],
+      ["Macerate","Toss the berries with sugar and lemon juice and let them sit 15 minutes until juicy."],
+      ["Cook down","Bring to a boil with the water, then simmer, stirring often, for about 20 minutes until thick and glossy."],
+      ["Test the set","Drop a little on the cold plate; if it wrinkles when pushed, it's ready. If not, cook a few minutes more."],
+      ["Jar it","Skim any foam, ladle into clean warm jars, seal, and cool. Keeps 3 weeks in the fridge."]
+    ],
+    tips:["Under-ripe berries carry more natural pectin and help the set.","Keep the batch small — big pots of jam take forever and dull the flavour.","For a seedless jam, press half the fruit through a sieve first."],
+    nutri:{Calories:"absent",Protein:"0 g",Carbs:"18 g",Fat:"0 g"}
+  },
+  {
+    id:"anko", cat:"Sweets", ill:"ill-anko",
+    title:"Sweet Red Bean Paste (Anko)",
+    desc:"Silky-sweet azuki bean paste — the soul of so many Japanese sweets.",
+    rating:4.8, reviews:143, prep:"10 min", cook:"1 hr 30 min", total:"1 hr 40 min", serves:20,
+    lede:"A little nod to the recipe that inspired this whole site. Just beans, sugar, and salt, cooked patiently until thick and glossy. Leave it chunky or blend it smooth.",
+    ingredients:[
+      {name:"dried azuki beans", us:[7,"oz"], metric:[200,"g"]},
+      {name:"sugar", us:[0.75,"cup"], metric:[175,"g"]},
+      {name:"kosher salt", us:[0.5,"tsp"], metric:[3,"g"]},
+      {name:"water, to cover", us:[6,"cup"], metric:[1.4,"l"]}
+    ],
+    steps:[
+      ["Rinse & parboil","Rinse the beans, cover generously with water, bring to a boil, then drain to remove any bitterness."],
+      ["Simmer tender","Cover with fresh water and simmer gently 60–90 minutes, topping up water so they stay submerged, until a bean mashes easily."],
+      ["Sweeten","Drain, return to the pot over low heat, and stir in the sugar in two additions, then the salt."],
+      ["Cook to a paste","Keep stirring until you can draw a line across the bottom of the pot with a spatula — it thickens more as it cools."],
+      ["Chunky or smooth","Leave it as-is for chunky tsubuan, or blend to a fine paste for smooth koshian. Spread on a tray to cool."]
+    ],
+    tips:["Modern beans don't need overnight soaking — start straight away.","A pinch of salt makes the sweetness taste rounder, not saltier.","Stop at the line test; carry-over heat firms it up as it cools."],
+    nutri:{Calories:"absent",Protein:"1 g",Carbs:"10 g",Fat:"0 g"}
+  }
+];
+
+/* ---------- helpers ---------- */
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const saved = new Set();
+
+const FR = {0.125:"⅛",0.25:"¼",0.33:"⅓",0.333:"⅓",0.375:"⅜",0.5:"½",0.625:"⅝",0.66:"⅔",0.667:"⅔",0.75:"¾",0.875:"⅞"};
+function fmtQty(n){
+  if(n==null) return "";
+  const rounded = Math.round(n*1000)/1000;
+  const whole = Math.floor(rounded);
+  let frac = Math.round((rounded-whole)*1000)/1000;
+  // snap to nearest common fraction
+  let best=null,bestDiff=1;
+  for(const k in FR){const d=Math.abs(frac-parseFloat(k)); if(d<bestDiff){bestDiff=d;best=k;}}
+  if(frac>0.02 && bestDiff<0.04){
+    return (whole?whole:"") + FR[best] + (whole?"":"");
+  }
+  if(frac<=0.02) return String(whole);
+  // fall back to one decimal
+  return String(Math.round(rounded*10)/10);
+}
+function starSvg(){return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>';}
+function starsFor(r){
+  const full=Math.round(r);
+  let s="";for(let i=0;i<5;i++) s+= `<span style="opacity:${i<full?1:.28}">${starSvg()}</span>`;
+  return s;
+}
+function photo(rec, cls){
+  if(rec.img){ return `<div class="photo ${cls||''}"><img src="${rec.img}" alt="${rec.title}" loading="lazy"></div>`; }
+  return `<div class="photo ${cls||''}"><svg><use href="#${rec.ill}"/></svg></div>`;
+}
+
+/* ---------- render grid ---------- */
+const grid = $("#grid");
+let activeCat = "all";
+let query = "";
+
+function filtered(){
+  return RECIPES.filter(r=>{
+    const catOk = activeCat==="all" || r.cat===activeCat;
+    const q = query.trim().toLowerCase();
+    const qOk = !q || (r.title+" "+r.desc+" "+r.cat).toLowerCase().includes(q);
+    return catOk && qOk;
+  });
+}
+
+function renderGrid(){
+  const list = filtered();
+  grid.innerHTML = "";
+  $("#empty").hidden = list.length>0;
+  $("#resultCount").textContent = `${list.length} recipe${list.length!==1?"s":""}`;
+  $("#gridTitle").textContent = activeCat==="all" ? "The whole collection" : activeCat;
+
+  list.forEach((r,i)=>{
+    const b = document.createElement("button");
+    b.className="card";
+    b.setAttribute("aria-label",`Open recipe: ${r.title}`);
+    b.innerHTML = `
+      ${photo(r)}
+      <span class="cat-flag">${r.cat}</span>
+      <span class="fav" role="button" aria-pressed="${saved.has(r.id)}" data-fav="${r.id}" aria-label="Save recipe" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15l-7-4-7 4V5a1 1 0 011-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </span>
+      <div class="card-body">
+        <h3>${r.title}</h3>
+        <p class="desc">${r.desc}</p>
+        <div class="card-foot">
+          <span class="rate"><span class="stars">${starSvg()}</span><span class="rating-num">${r.rating}</span><span class="rating-count">(${r.reviews})</span></span>
+          <span class="meta-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>${r.total}</span>
+        </div>
+      </div>`;
+    b.addEventListener("click",(e)=>{
+      if(e.target.closest("[data-fav]")) return;
+      openRecipe(r.id);
+    });
+    grid.appendChild(b);
+    requestAnimationFrame(()=> setTimeout(()=> b.classList.add("in"), i*45));
+  });
+}
+
+/* ---------- favourites ---------- */
+function toggleFav(id){
+  if(saved.has(id)) saved.delete(id); else saved.add(id);
+  $("#savedCount").textContent = saved.size;
+  $$(`[data-fav="${id}"]`).forEach(el=> el.setAttribute("aria-pressed", saved.has(id)));
+  const ms=$("#mSave");
+  if(ms && ms.dataset.id===id){
+    ms.setAttribute("aria-pressed", saved.has(id));
+    $("#mSaveLabel").textContent = saved.has(id)?"Saved":"Save";
+  }
+}
+document.addEventListener("click",(e)=>{
+  const fav=e.target.closest("[data-fav]");
+  if(fav){ e.stopPropagation(); toggleFav(fav.dataset.fav); }
+});
+document.addEventListener("keydown",(e)=>{
+  const fav=e.target.closest && e.target.closest("[data-fav]");
+  if(fav && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); toggleFav(fav.dataset.fav); }
+});
+
+/* ---------- modal ---------- */
+const scrim=$("#scrim");
+let current=null, unit="us", scale=1, lastFocus=null;
+
+function renderIngredients(){
+  const ul=$("#ingList"); ul.innerHTML="";
+  current.ingredients.forEach((ing,idx)=>{
+    const pair = unit==="us"?ing.us:ing.metric;
+    const qty = pair[0]!=null ? fmtQty(pair[0]*scale) : "";
+    const u = pair[1]||"";
+    const li=document.createElement("li");
+    li.dataset.done = li.dataset.done||"0";
+    li.innerHTML = `
+      <span class="ing-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="ing-text"><span class="amt">${qty}${u?" "+u:""}</span> ${ing.name}</span>`;
+    li.addEventListener("click",()=> li.dataset.done = li.dataset.done==="1"?"0":"1");
+    ul.appendChild(li);
+  });
+  const base=current.serves;
+  $("#scaleServes").textContent = `makes ${base*scale} serving${base*scale!==1?"s":""}`;
+}
+
+function openRecipe(id){
+  const r=RECIPES.find(x=>x.id===id); if(!r) return;
+  current=r; unit="us"; scale=1; lastFocus=document.activeElement;
+
+  $("#mHeroUse").setAttribute("href", "#"+r.ill);
+  // swap hero to <img> if a photo is provided
+  const heroWrap=$("#mHero");
+  heroWrap.innerHTML = r.img ? `<img src="${r.img}" alt="${r.title}" style="width:100%;height:100%;object-fit:cover">`
+                             : `<svg><use href="#${r.ill}" id="mHeroUse"></use></svg>`;
+
+  $("#mCrumbCat").textContent = r.cat;
+  $("#mTitle").textContent = r.title;
+  $("#mStars").innerHTML = starsFor(r.rating);
+  $("#mRating").textContent = r.rating;
+  $("#mReviews").textContent = `· ${r.reviews} reviews`;
+  $("#mLede").textContent = r.lede;
+  $("#mPrep").textContent = r.prep;
+  $("#mCook").textContent = r.cook;
+  $("#mTotal").textContent = r.total;
+  $("#mServes").textContent = r.serves;
+
+  // save button
+  const ms=$("#mSave"); ms.dataset.id=r.id;
+  ms.setAttribute("aria-pressed", saved.has(r.id));
+  $("#mSaveLabel").textContent = saved.has(r.id)?"Saved":"Save";
+
+  // unit + scale segs reset
+  $$("#unitSeg button").forEach(b=> b.setAttribute("aria-pressed", b.dataset.unit==="us"));
+  $$("#scaleSeg button").forEach(b=> b.setAttribute("aria-pressed", b.dataset.scale==="1"));
+
+  renderIngredients();
+
+  // steps
+  const ol=$("#stepList"); ol.innerHTML="";
+  r.steps.forEach(([t,body])=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<span class="st-title">${t}</span><p>${body}</p>`;
+    ol.appendChild(li);
+  });
+
+  // tips
+  const tl=$("#tipsList"); tl.innerHTML="";
+  r.tips.forEach(t=>{const li=document.createElement("li");li.textContent=t;tl.appendChild(li);});
+
+  // nutrition
+  const nu=$("#nutri"); nu.innerHTML="";
+  Object.entries(r.nutri).forEach(([k,v])=>{
+    if(v==="absent") return;
+    const s=document.createElement("span"); s.innerHTML=`${k} <b>${v}</b>`; nu.appendChild(s);
+  });
+
+  // you might also like (same cat first, then others)
+  const mg=$("#moreGrid"); mg.innerHTML="";
+  const others=[...RECIPES.filter(x=>x.id!==r.id && x.cat===r.cat), ...RECIPES.filter(x=>x.id!==r.id && x.cat!==r.cat)].slice(0,3);
+  others.forEach(o=>{
+    const b=document.createElement("button"); b.className="more-card";
+    b.innerHTML = `${photo(o)}<p>${o.title}</p>`;
+    b.addEventListener("click",()=>openRecipe(o.id));
+    mg.appendChild(b);
+  });
+
+  scrim.classList.add("open");
+  document.body.style.overflow="hidden";
+  $("#modal").scrollTop=0; scrim.scrollTop=0;
+  $("#modalClose").focus();
+}
+
+function closeRecipe(){
+  scrim.classList.remove("open");
+  document.body.style.overflow="";
+  releaseWake();
+  if(lastFocus) lastFocus.focus();
+}
+
+$("#modalClose").addEventListener("click",closeRecipe);
+scrim.addEventListener("click",(e)=>{ if(e.target===scrim) closeRecipe(); });
+document.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && scrim.classList.contains("open")) closeRecipe(); });
+
+// unit + scale controls
+$("#unitSeg").addEventListener("click",(e)=>{
+  const b=e.target.closest("button"); if(!b) return;
+  unit=b.dataset.unit;
+  $$("#unitSeg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  renderIngredients();
+});
+$("#scaleSeg").addEventListener("click",(e)=>{
+  const b=e.target.closest("button"); if(!b) return;
+  scale=parseInt(b.dataset.scale,10);
+  $$("#scaleSeg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  renderIngredients();
+});
+
+// save from modal
+$("#mSave").addEventListener("click",()=> current && toggleFav(current.id));
+
+// print
+$("#mPrint").addEventListener("click",()=> window.print());
+
+// cook mode (Wake Lock with graceful fallback)
+let wakeLock=null;
+async function requestWake(){
+  try{ if("wakeLock" in navigator){ wakeLock=await navigator.wakeLock.request("screen"); return true; } }catch(e){}
+  return false;
+}
+function releaseWake(){ try{ wakeLock && wakeLock.release(); }catch(e){} wakeLock=null;
+  const btn=$("#mCookMode"); btn && btn.setAttribute("aria-pressed","false");
+}
+$("#mCookMode").addEventListener("click", async (e)=>{
+  const btn=e.currentTarget;
+  const on=btn.getAttribute("aria-pressed")==="true";
+  if(on){ releaseWake(); }
+  else{
+    const ok=await requestWake();
+    btn.setAttribute("aria-pressed","true");
+    if(!ok) btn.title="Your browser will keep this tab awake while open.";
+  }
+});
+document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible" && $("#mCookMode").getAttribute("aria-pressed")==="true") requestWake(); });
+
+/* ---------- filters / chips / search ---------- */
+$("#chips").addEventListener("click",(e)=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  activeCat=b.dataset.cat;
+  $$(".chip").forEach(c=>c.setAttribute("aria-pressed", c===b));
+  renderGrid();
+});
+$("#search").addEventListener("input",(e)=>{ query=e.target.value; renderGrid(); });
+
+// jump-to-category links (nav + footer)
+$$("[data-jump-cat]").forEach(a=> a.addEventListener("click",(e)=>{
+  const cat=a.dataset.jumpCat;
+  activeCat=cat;
+  $$(".chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.cat===cat));
+  renderGrid();
+}));
+
+// featured hero opens stew
+$("#heroFeature").addEventListener("click",()=>openRecipe("stew"));
+
+// saved pill scrolls to collection
+$("#savedPill").addEventListener("click",(e)=>{ /* anchor handles scroll */ });
+
+// mobile search toggle -> focus header search if visible, else prompt inline
+$("#navToggle").addEventListener("click",()=>{
+  document.querySelector("#collection").scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>{ const s=$("#search"); s && s.focus(); }, 400);
+});
+
+// newsletter (demo)
+$("#nlBtn").addEventListener("click",()=>{
+  const v=$("#nlEmail").value.trim();
+  const ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+  const note=$("#nlNote");
+  if(ok){ note.textContent="You're in — check your inbox 🍞"; note.style.color="var(--herb-deep)"; $("#nlEmail").value=""; }
+  else { note.textContent="Hmm, that doesn't look like an email address."; note.style.color="var(--brand-deep)"; }
+});
+
+/* ---------- init ---------- */
+$("#year").textContent=new Date().getFullYear();
+$("#statCount").textContent=RECIPES.length;
+renderGrid();
+</script>
+</body>
+</html>
