@@ -200,6 +200,7 @@
   .card:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
   .card .photo{aspect-ratio:4/3;position:relative}
   .card .photo svg{width:100%;height:100%}
+  .photo img,.photo video,.modal-hero img,.modal-hero video{width:100%;height:100%;object-fit:cover;display:block}
   .card .fav{
     position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
     background:rgba(255,251,245,.92);border:1px solid var(--line);
@@ -797,8 +798,20 @@ function starsFor(r){
   let s="";for(let i=0;i<5;i++) s+= `<span style="opacity:${i<full?1:.28}">${starSvg()}</span>`;
   return s;
 }
+function startVids(scope){
+  $$("video",scope||document).forEach(v=>{
+    v.muted=true;
+    const go=()=>v.play().catch(()=>{});
+    if(v.readyState>=2) go();
+    else v.addEventListener("canplay",go,{once:true});
+  });
+}
+function mediaTag(src, alt){
+  if(/\.(mp4|webm)(\?|$)/i.test(src)) return `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-label="${alt}"></video>`;
+  return `<img src="${src}" alt="${alt}" loading="lazy">`;
+}
 function photo(rec, cls){
-  if(rec.img){ return `<div class="photo ${cls||''}"><img src="${rec.img}" alt="${rec.title}" loading="lazy"></div>`; }
+  if(rec.img){ return `<div class="photo ${cls||''}">${mediaTag(rec.img, rec.title)}</div>`; }
   return `<div class="photo ${cls||''}"><svg><use href="#${rec.ill}"/></svg></div>`;
 }
 
@@ -848,6 +861,7 @@ function renderGrid(){
     grid.appendChild(b);
     requestAnimationFrame(()=> setTimeout(()=> b.classList.add("in"), i*45));
   });
+  startVids(grid);
 }
 
 /* ---------- favourites ---------- */
@@ -896,10 +910,9 @@ function openRecipe(id){
   const r=RECIPES.find(x=>x.id===id); if(!r) return;
   current=r; unit="us"; scale=1; lastFocus=document.activeElement;
 
-  $("#mHeroUse").setAttribute("href", "#"+r.ill);
-  // swap hero to <img> if a photo is provided
+  // rebuild hero: media file if provided, otherwise the illustration
   const heroWrap=$("#mHero");
-  heroWrap.innerHTML = r.img ? `<img src="${r.img}" alt="${r.title}" style="width:100%;height:100%;object-fit:cover">`
+  heroWrap.innerHTML = r.img ? mediaTag(r.img, r.title)
                              : `<svg><use href="#${r.ill}" id="mHeroUse"></use></svg>`;
 
   $("#mCrumbCat").textContent = r.cat;
@@ -954,6 +967,7 @@ function openRecipe(id){
     mg.appendChild(b);
   });
 
+  startVids($("#modal"));
   scrim.classList.add("open");
   document.body.style.overflow="hidden";
   $("#modal").scrollTop=0; scrim.scrollTop=0;
@@ -1011,6 +1025,7 @@ $("#mCookMode").addEventListener("click", async (e)=>{
   }
 });
 document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible" && $("#mCookMode").getAttribute("aria-pressed")==="true") requestWake(); });
+document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible") startVids(document); });
 
 /* ---------- filters / chips / search ---------- */
 $("#chips").addEventListener("click",(e)=>{

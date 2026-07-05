@@ -30,7 +30,7 @@ collections:
                 name: "ill"
                 widget: "select"
                 options: ["ill-stew", "ill-sourdough", "ill-galette", "ill-jam", "ill-cornbread", "ill-chicken", "ill-oats", "ill-cake", "ill-anko"]
-              - { label: "Photo (optional — overrides the illustration)", name: "img", widget: "image", required: false, allow_multiple: false }
+              - { label: "Photo or video (optional — overrides the illustration; jpg/png/gif/mp4)", name: "img", widget: "file", required: false, allow_multiple: false }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Card description", name: "desc", widget: "string" }
               - { label: "Rating (0–5)", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1 }
