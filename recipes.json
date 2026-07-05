@@ -1,0 +1,343 @@
+{
+  "recipes": [
+    {
+      "id": "stew",
+      "cat": "Mains",
+      "ill": "ill-stew",
+      "img": "",
+      "title": "Slow-Braised Beef & Root Vegetable Stew",
+      "desc": "Fork-tender beef and sweet winter roots in a glossy red-wine gravy.",
+      "rating": 4.9,
+      "reviews": 214,
+      "prep": "25 min",
+      "cook": "2 hr 35 min",
+      "total": "3 hr",
+      "serves": 6,
+      "lede": "This is the pot I put on when the afternoon turns grey. Brown the beef properly, let it go low and slow, and the gravy turns deep and glossy on its own.",
+      "ingredients": [
+        { "name": "beef chuck, cubed", "usQty": 1.5, "usUnit": "lb", "metricQty": 700, "metricUnit": "g" },
+        { "name": "plain flour", "usQty": 3, "usUnit": "tbsp", "metricQty": 24, "metricUnit": "g" },
+        { "name": "olive oil", "usQty": 2, "usUnit": "tbsp", "metricQty": 30, "metricUnit": "ml" },
+        { "name": "onion, diced", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" },
+        { "name": "garlic cloves, crushed", "usQty": 3, "usUnit": "", "metricQty": 3, "metricUnit": "" },
+        { "name": "carrots, chunked", "usQty": 3, "usUnit": "", "metricQty": 3, "metricUnit": "" },
+        { "name": "parsnips, chunked", "usQty": 2, "usUnit": "", "metricQty": 2, "metricUnit": "" },
+        { "name": "tomato paste", "usQty": 2, "usUnit": "tbsp", "metricQty": 32, "metricUnit": "g" },
+        { "name": "dry red wine", "usQty": 1, "usUnit": "cup", "metricQty": 240, "metricUnit": "ml" },
+        { "name": "beef stock", "usQty": 2, "usUnit": "cup", "metricQty": 480, "metricUnit": "ml" },
+        { "name": "bay leaves", "usQty": 2, "usUnit": "", "metricQty": 2, "metricUnit": "" },
+        { "name": "fresh thyme", "usQty": 4, "usUnit": "sprig", "metricQty": 4, "metricUnit": "sprig" }
+      ],
+      "steps": [
+        { "title": "Dry & dredge", "text": "Pat the beef very dry, season well, and toss in the flour until lightly coated." },
+        { "title": "Sear in batches", "text": "Heat the oil and brown the beef hard on all sides, in batches so it colours rather than steams. Set aside." },
+        { "title": "Build the base", "text": "Soften the onion in the same pot, add garlic and tomato paste, and cook a minute until it smells sweet and jammy." },
+        { "title": "Deglaze", "text": "Pour in the wine, scraping up every brown bit from the bottom, and let it reduce by half." },
+        { "title": "Braise low", "text": "Return the beef, add stock, bay, and thyme, cover, and simmer gently for 2 hours until the beef is nearly tender." },
+        { "title": "Add the roots", "text": "Stir in carrots and parsnips and cook uncovered 30–40 minutes more, until everything is soft and the gravy coats a spoon." }
+      ],
+      "tips": [
+        "Brown deeply — that dark crust is where the whole flavour of the gravy comes from.",
+        "No wine? Use all stock plus a spoon of balsamic for depth.",
+        "Even better the next day; the flavour rounds out overnight."
+      ],
+      "nutrition": { "calories": "", "protein": "38 g", "carbs": "22 g", "fat": "19 g" }
+    },
+    {
+      "id": "sourdough",
+      "cat": "Baking",
+      "ill": "ill-sourdough",
+      "img": "",
+      "title": "No-Knead Rustic Sourdough Loaf",
+      "desc": "A crackly crust and open, tangy crumb from a fuss-free overnight rise.",
+      "rating": 4.8,
+      "reviews": 301,
+      "prep": "20 min",
+      "cook": "45 min",
+      "total": "18 hr",
+      "serves": 8,
+      "lede": "You don't need to knead and you don't need to hover. Time does the work here — mix in the evening, bake to a deep crust the next day.",
+      "ingredients": [
+        { "name": "bread flour", "usQty": 3.5, "usUnit": "cup", "metricQty": 500, "metricUnit": "g" },
+        { "name": "active sourdough starter", "usQty": 0.5, "usUnit": "cup", "metricQty": 100, "metricUnit": "g" },
+        { "name": "warm water", "usQty": 1.5, "usUnit": "cup", "metricQty": 350, "metricUnit": "ml" },
+        { "name": "fine sea salt", "usQty": 2, "usUnit": "tsp", "metricQty": 10, "metricUnit": "g" },
+        { "name": "rice flour, for dusting", "usQty": 2, "usUnit": "tbsp", "metricQty": 16, "metricUnit": "g" }
+      ],
+      "steps": [
+        { "title": "Mix the dough", "text": "Stir starter into the warm water, then mix in the flour and salt until no dry patches remain. It will be shaggy." },
+        { "title": "Fold, don't knead", "text": "Over the next 2 hours, do four sets of stretch-and-folds, 30 minutes apart, then cover." },
+        { "title": "Long rise", "text": "Let it rise at room temperature until roughly doubled and airy, about 8–12 hours." },
+        { "title": "Shape", "text": "Tip out, shape into a tight round, and rest seam-up in a floured banneton for 1 hour." },
+        { "title": "Preheat hot", "text": "Heat a Dutch oven at 475°F / 245°C for 30 minutes so it's screaming hot." },
+        { "title": "Score & bake", "text": "Score the top, bake covered 25 minutes, then uncovered 18–20 minutes until deeply golden. Cool fully before slicing." }
+      ],
+      "tips": [
+        "Your starter should be bubbly and float in water before you begin.",
+        "Cool completely — cutting warm bread makes the crumb gummy.",
+        "A cast-iron pot traps steam for that bakery crust."
+      ],
+      "nutrition": { "calories": "", "protein": "9 g", "carbs": "48 g", "fat": "1 g" }
+    },
+    {
+      "id": "galette",
+      "cat": "Baking",
+      "ill": "ill-galette",
+      "img": "",
+      "title": "Summer Tomato & Basil Galette",
+      "desc": "A free-form tart with a buttery crust, ripe tomatoes and melting cheese.",
+      "rating": 4.7,
+      "reviews": 156,
+      "prep": "25 min",
+      "cook": "40 min",
+      "total": "1 hr 20 min",
+      "serves": 6,
+      "lede": "The lazy cook's tart — no tin, no fluting, just a rustic fold of pastry around the best tomatoes you can find. Salt them first so the crust stays crisp.",
+      "ingredients": [
+        { "name": "plain flour", "usQty": 1.25, "usUnit": "cup", "metricQty": 180, "metricUnit": "g" },
+        { "name": "cold butter, cubed", "usQty": 0.5, "usUnit": "cup", "metricQty": 115, "metricUnit": "g" },
+        { "name": "ice water", "usQty": 3, "usUnit": "tbsp", "metricQty": 45, "metricUnit": "ml" },
+        { "name": "ripe tomatoes, sliced", "usQty": 1.25, "usUnit": "lb", "metricQty": 560, "metricUnit": "g" },
+        { "name": "ricotta", "usQty": 0.75, "usUnit": "cup", "metricQty": 185, "metricUnit": "g" },
+        { "name": "grated parmesan", "usQty": 0.33, "usUnit": "cup", "metricQty": 35, "metricUnit": "g" },
+        { "name": "fresh basil", "usQty": 0.5, "usUnit": "cup", "metricQty": 12, "metricUnit": "g" },
+        { "name": "egg, for glaze", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" }
+      ],
+      "steps": [
+        { "title": "Make the pastry", "text": "Rub butter into the flour with a pinch of salt until crumbly, add ice water, and bring together. Chill 30 minutes." },
+        { "title": "Salt the tomatoes", "text": "Lay the slices on paper towels, salt lightly, and leave 15 minutes to draw out water. Pat dry." },
+        { "title": "Roll & fill", "text": "Roll pastry into a rough circle, spread ricotta and parmesan in the centre, leaving a 2-inch border." },
+        { "title": "Arrange", "text": "Fan the tomato slices over the cheese and tuck torn basil between them." },
+        { "title": "Fold & glaze", "text": "Fold the border up over the edge, pleating as you go, and brush the pastry with beaten egg." },
+        { "title": "Bake", "text": "Bake at 400°F / 200°C for 38–42 minutes until the crust is deep gold. Finish with more basil." }
+      ],
+      "tips": [
+        "Salting the tomatoes is the difference between crisp and soggy — don't skip it.",
+        "Keep the butter cold; warm pastry loses its flake.",
+        "Great warm or at room temperature for a picnic."
+      ],
+      "nutrition": { "calories": "", "protein": "11 g", "carbs": "26 g", "fat": "22 g" }
+    },
+    {
+      "id": "chicken",
+      "cat": "Mains",
+      "ill": "ill-chicken",
+      "img": "",
+      "title": "Herb-Roasted Garlic Chicken",
+      "desc": "Crisp-skinned roast chicken with lemon, garlic and a pan of soft herbs.",
+      "rating": 4.9,
+      "reviews": 428,
+      "prep": "15 min",
+      "cook": "1 hr 15 min",
+      "total": "1 hr 30 min",
+      "serves": 4,
+      "lede": "The Sunday anchor. Butter under the skin, a lemon in the cavity, and a hot oven — that's the whole trick to juicy meat and shatter-crisp skin.",
+      "ingredients": [
+        { "name": "whole chicken", "usQty": 4, "usUnit": "lb", "metricQty": 1.8, "metricUnit": "kg" },
+        { "name": "softened butter", "usQty": 4, "usUnit": "tbsp", "metricQty": 57, "metricUnit": "g" },
+        { "name": "garlic cloves, minced", "usQty": 4, "usUnit": "", "metricQty": 4, "metricUnit": "" },
+        { "name": "lemon, halved", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" },
+        { "name": "fresh rosemary", "usQty": 2, "usUnit": "tbsp", "metricQty": 6, "metricUnit": "g" },
+        { "name": "fresh thyme", "usQty": 1, "usUnit": "tbsp", "metricQty": 3, "metricUnit": "g" },
+        { "name": "olive oil", "usQty": 1, "usUnit": "tbsp", "metricQty": 15, "metricUnit": "ml" },
+        { "name": "sea salt", "usQty": 1.5, "usUnit": "tsp", "metricQty": 9, "metricUnit": "g" }
+      ],
+      "steps": [
+        { "title": "Dry the bird", "text": "Pat the chicken completely dry, inside and out — dry skin is crisp skin." },
+        { "title": "Herb butter", "text": "Mash butter with garlic, chopped herbs, and salt, then push most of it under the breast skin." },
+        { "title": "Season & stuff", "text": "Rub the outside with oil and the rest of the butter, and tuck the lemon halves inside." },
+        { "title": "Truss loosely", "text": "Tie the legs together and tuck the wing tips under so it roasts evenly." },
+        { "title": "Roast hot", "text": "Roast at 425°F / 220°C for about 1 hour 15 minutes, until the thigh juices run clear (74°C internal)." },
+        { "title": "Rest", "text": "Rest 15 minutes before carving so the juices settle back into the meat." }
+      ],
+      "tips": [
+        "Let the chicken sit uncovered in the fridge a few hours first for even crispier skin.",
+        "Save the carcass — it makes the beef stew's cousin, a golden stock.",
+        "No thermometer? Juices at the thigh joint should run clear, not pink."
+      ],
+      "nutrition": { "calories": "", "protein": "41 g", "carbs": "2 g", "fat": "28 g" }
+    },
+    {
+      "id": "oats",
+      "cat": "Breakfast",
+      "ill": "ill-oats",
+      "img": "",
+      "title": "Baked Oats with Pear & Honey",
+      "desc": "Warm, custardy baked oats with soft pears and a drizzle of honey.",
+      "rating": 4.6,
+      "reviews": 189,
+      "prep": "10 min",
+      "cook": "35 min",
+      "total": "45 min",
+      "serves": 4,
+      "lede": "Somewhere between porridge and cake. Assemble it half-asleep, slide it in the oven, and breakfast makes itself while the coffee brews.",
+      "ingredients": [
+        { "name": "rolled oats", "usQty": 2, "usUnit": "cup", "metricQty": 180, "metricUnit": "g" },
+        { "name": "milk", "usQty": 2, "usUnit": "cup", "metricQty": 480, "metricUnit": "ml" },
+        { "name": "egg", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" },
+        { "name": "honey", "usQty": 3, "usUnit": "tbsp", "metricQty": 63, "metricUnit": "g" },
+        { "name": "ripe pears, sliced", "usQty": 2, "usUnit": "", "metricQty": 2, "metricUnit": "" },
+        { "name": "baking powder", "usQty": 1, "usUnit": "tsp", "metricQty": 5, "metricUnit": "g" },
+        { "name": "ground cinnamon", "usQty": 1, "usUnit": "tsp", "metricQty": 3, "metricUnit": "g" },
+        { "name": "vanilla extract", "usQty": 1, "usUnit": "tsp", "metricQty": 5, "metricUnit": "ml" }
+      ],
+      "steps": [
+        { "title": "Heat the oven", "text": "Preheat to 350°F / 180°C and butter a small baking dish." },
+        { "title": "Whisk the custard", "text": "Whisk milk, egg, honey, vanilla, cinnamon, and baking powder until smooth." },
+        { "title": "Combine", "text": "Stir in the oats and half the pears, then pour into the dish." },
+        { "title": "Top", "text": "Fan the remaining pear slices over the surface and drizzle with a little extra honey." },
+        { "title": "Bake", "text": "Bake 32–36 minutes until set in the middle and golden at the edges. Rest 5 minutes before spooning out." }
+      ],
+      "tips": [
+        "Swap pears for apple or berries with the seasons.",
+        "A spoon of yoghurt on top turns it into pudding.",
+        "Leftovers reheat beautifully — make a double batch."
+      ],
+      "nutrition": { "calories": "", "protein": "12 g", "carbs": "52 g", "fat": "8 g" }
+    },
+    {
+      "id": "cornbread",
+      "cat": "Baking",
+      "ill": "ill-cornbread",
+      "img": "",
+      "title": "Buttermilk Skillet Cornbread",
+      "desc": "Golden, tender cornbread with crisp edges from a screaming-hot skillet.",
+      "rating": 4.8,
+      "reviews": 224,
+      "prep": "10 min",
+      "cook": "25 min",
+      "total": "35 min",
+      "serves": 8,
+      "lede": "Poured into a hot, buttered skillet so the edges fry crisp while the middle stays soft. Barely sweet — the way it's meant to go beside a bowl of stew.",
+      "ingredients": [
+        { "name": "cornmeal", "usQty": 1.5, "usUnit": "cup", "metricQty": 210, "metricUnit": "g" },
+        { "name": "plain flour", "usQty": 1, "usUnit": "cup", "metricQty": 125, "metricUnit": "g" },
+        { "name": "buttermilk", "usQty": 1.5, "usUnit": "cup", "metricQty": 360, "metricUnit": "ml" },
+        { "name": "eggs", "usQty": 2, "usUnit": "", "metricQty": 2, "metricUnit": "" },
+        { "name": "melted butter", "usQty": 6, "usUnit": "tbsp", "metricQty": 85, "metricUnit": "g" },
+        { "name": "honey", "usQty": 2, "usUnit": "tbsp", "metricQty": 42, "metricUnit": "g" },
+        { "name": "baking powder", "usQty": 1, "usUnit": "tbsp", "metricQty": 14, "metricUnit": "g" },
+        { "name": "fine salt", "usQty": 1, "usUnit": "tsp", "metricQty": 6, "metricUnit": "g" }
+      ],
+      "steps": [
+        { "title": "Heat the skillet", "text": "Put a cast-iron skillet in the oven and preheat both to 425°F / 220°C." },
+        { "title": "Dry then wet", "text": "Whisk the dry ingredients in one bowl; whisk buttermilk, eggs, honey, and most of the butter in another." },
+        { "title": "Combine gently", "text": "Fold wet into dry until just barely mixed — a few lumps are fine, overmixing makes it tough." },
+        { "title": "Sizzle", "text": "Carefully swirl the last of the butter into the hot skillet, then pour in the batter — it should hiss." },
+        { "title": "Bake", "text": "Bake 22–25 minutes until golden and a skewer comes out clean. Serve warm, straight from the pan." }
+      ],
+      "tips": [
+        "The hot skillet is everything — that's what crisps the edge.",
+        "No buttermilk? Stir a spoon of lemon juice into regular milk and wait 5 minutes.",
+        "Add a diced chilli or a handful of corn for a savoury twist."
+      ],
+      "nutrition": { "calories": "", "protein": "7 g", "carbs": "38 g", "fat": "13 g" }
+    },
+    {
+      "id": "cake",
+      "cat": "Sweets",
+      "ill": "ill-cake",
+      "img": "",
+      "title": "Lemon & Olive Oil Cake",
+      "desc": "A moist, fragrant cake with bright lemon and a soft olive-oil crumb.",
+      "rating": 4.9,
+      "reviews": 267,
+      "prep": "15 min",
+      "cook": "45 min",
+      "total": "1 hr",
+      "serves": 10,
+      "lede": "Olive oil keeps this cake moist for days and lets the lemon sing. One bowl, a whisk, and no mixer required.",
+      "ingredients": [
+        { "name": "plain flour", "usQty": 1.75, "usUnit": "cup", "metricQty": 220, "metricUnit": "g" },
+        { "name": "sugar", "usQty": 1, "usUnit": "cup", "metricQty": 200, "metricUnit": "g" },
+        { "name": "extra-virgin olive oil", "usQty": 0.75, "usUnit": "cup", "metricQty": 180, "metricUnit": "ml" },
+        { "name": "eggs", "usQty": 3, "usUnit": "", "metricQty": 3, "metricUnit": "" },
+        { "name": "milk", "usQty": 0.5, "usUnit": "cup", "metricQty": 120, "metricUnit": "ml" },
+        { "name": "lemons, zested & juiced", "usQty": 2, "usUnit": "", "metricQty": 2, "metricUnit": "" },
+        { "name": "baking powder", "usQty": 1.5, "usUnit": "tsp", "metricQty": 7, "metricUnit": "g" },
+        { "name": "fine salt", "usQty": 0.5, "usUnit": "tsp", "metricQty": 3, "metricUnit": "g" }
+      ],
+      "steps": [
+        { "title": "Prep the tin", "text": "Preheat to 350°F / 180°C and line a 9-inch round tin." },
+        { "title": "Whisk the wet", "text": "Whisk sugar, eggs, and lemon zest until pale, then stream in the olive oil, milk, and lemon juice." },
+        { "title": "Fold the dry", "text": "Sift in flour, baking powder, and salt, and fold until just combined." },
+        { "title": "Bake", "text": "Pour in and bake 42–46 minutes until golden and a skewer comes out clean." },
+        { "title": "Finish", "text": "Cool in the tin 10 minutes, then dust with sugar or brush with a little warmed honey." }
+      ],
+      "tips": [
+        "Use a fruity olive oil you'd happily eat — it's the headline flavour.",
+        "Zest before you juice; it's far easier that way.",
+        "Keeps moist under a cloche for 3–4 days."
+      ],
+      "nutrition": { "calories": "", "protein": "5 g", "carbs": "34 g", "fat": "16 g" }
+    },
+    {
+      "id": "jam",
+      "cat": "Preserves",
+      "ill": "ill-jam",
+      "img": "",
+      "title": "Wild Blackberry Jam",
+      "desc": "A small-batch jam with deep berry flavour and a soft, spoonable set.",
+      "rating": 4.7,
+      "reviews": 143,
+      "prep": "15 min",
+      "cook": "30 min",
+      "total": "45 min",
+      "serves": 24,
+      "lede": "Made the old way with just fruit, sugar, and lemon — no pectin sachets. Small batches set best and keep the flavour bright and fresh.",
+      "ingredients": [
+        { "name": "blackberries", "usQty": 4, "usUnit": "cup", "metricQty": 600, "metricUnit": "g" },
+        { "name": "sugar", "usQty": 2, "usUnit": "cup", "metricQty": 400, "metricUnit": "g" },
+        { "name": "lemon, juiced", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" },
+        { "name": "water", "usQty": 2, "usUnit": "tbsp", "metricQty": 30, "metricUnit": "ml" }
+      ],
+      "steps": [
+        { "title": "Chill a plate", "text": "Put a small plate in the freezer — you'll use it to test the set." },
+        { "title": "Macerate", "text": "Toss the berries with sugar and lemon juice and let them sit 15 minutes until juicy." },
+        { "title": "Cook down", "text": "Bring to a boil with the water, then simmer, stirring often, for about 20 minutes until thick and glossy." },
+        { "title": "Test the set", "text": "Drop a little on the cold plate; if it wrinkles when pushed, it's ready. If not, cook a few minutes more." },
+        { "title": "Jar it", "text": "Skim any foam, ladle into clean warm jars, seal, and cool. Keeps 3 weeks in the fridge." }
+      ],
+      "tips": [
+        "Under-ripe berries carry more natural pectin and help the set.",
+        "Keep the batch small — big pots of jam take forever and dull the flavour.",
+        "For a seedless jam, press half the fruit through a sieve first."
+      ],
+      "nutrition": { "calories": "", "protein": "0 g", "carbs": "18 g", "fat": "0 g" }
+    },
+    {
+      "id": "anko",
+      "cat": "Sweets",
+      "ill": "ill-anko",
+      "img": "images/anko.jpg",
+      "title": "Sweet Red Bean Paste (Anko)",
+      "desc": "Silky-sweet azuki bean paste — the soul of so many Japanese sweets.",
+      "rating": 4.8,
+      "reviews": 143,
+      "prep": "10 min",
+      "cook": "1 hr 30 min",
+      "total": "1 hr 40 min",
+      "serves": 20,
+      "lede": "A little nod to the recipe that inspired this whole site. Just beans, sugar, and salt, cooked patiently until thick and glossy. Leave it chunky or blend it smooth.",
+      "ingredients": [
+        { "name": "dried azuki beans", "usQty": 7, "usUnit": "oz", "metricQty": 200, "metricUnit": "g" },
+        { "name": "sugar", "usQty": 0.75, "usUnit": "cup", "metricQty": 175, "metricUnit": "g" },
+        { "name": "kosher salt", "usQty": 0.5, "usUnit": "tsp", "metricQty": 3, "metricUnit": "g" },
+        { "name": "water, to cover", "usQty": 6, "usUnit": "cup", "metricQty": 1.4, "metricUnit": "l" }
+      ],
+      "steps": [
+        { "title": "Rinse & parboil", "text": "Rinse the beans, cover generously with water, bring to a boil, then drain to remove any bitterness." },
+        { "title": "Simmer tender", "text": "Cover with fresh water and simmer gently 60–90 minutes, topping up water so they stay submerged, until a bean mashes easily." },
+        { "title": "Sweeten", "text": "Drain, return to the pot over low heat, and stir in the sugar in two additions, then the salt." },
+        { "title": "Cook to a paste", "text": "Keep stirring until you can draw a line across the bottom of the pot with a spatula — it thickens more as it cools." },
+        { "title": "Chunky or smooth", "text": "Leave it as-is for chunky tsubuan, or blend to a fine paste for smooth koshian. Spread on a tray to cool." }
+      ],
+      "tips": [
+        "Modern beans don't need overnight soaking — start straight away.",
+        "A pinch of salt makes the sweetness taste rounder, not saltier.",
+        "Stop at the line test; carry-over heat firms it up as it cools."
+      ],
+      "nutrition": { "calories": "", "protein": "1 g", "carbs": "10 g", "fat": "0 g" }
+    }
+  ]
+}

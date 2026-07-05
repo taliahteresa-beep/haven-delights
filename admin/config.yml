@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: taliahteresa-beep/haven-delights
+  branch: main
+  base_url: https://recipe.chenki.com
+  auth_endpoint: api/auth
+
+media_folder: "images"
+public_folder: "images"
+
+site_url: https://recipe.chenki.com
+
+collections:
+  - name: "site"
+    label: "Site content"
+    files:
+      - name: "recipes"
+        label: "Recipes"
+        file: "recipes.json"
+        description: "All recipes on the site. Add, edit, or remove recipes here."
+        fields:
+          - label: "Recipes"
+            name: "recipes"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID (short unique slug, e.g. anko)", name: "id", widget: "string" }
+              - { label: "Category", name: "cat", widget: "select", options: ["Breakfast", "Mains", "Baking", "Preserves", "Sweets"] }
+              - label: "Illustration (used when no photo is set)"
+                name: "ill"
+                widget: "select"
+                options: ["ill-stew", "ill-sourdough", "ill-galette", "ill-jam", "ill-cornbread", "ill-chicken", "ill-oats", "ill-cake", "ill-anko"]
+              - { label: "Photo (optional — overrides the illustration)", name: "img", widget: "image", required: false, allow_multiple: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Card description", name: "desc", widget: "string" }
+              - { label: "Rating (0–5)", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1 }
+              - { label: "Review count", name: "reviews", widget: "number", value_type: "int", min: 0 }
+              - { label: "Prep time", name: "prep", widget: "string", hint: "e.g. 15 min" }
+              - { label: "Cook time", name: "cook", widget: "string", hint: "e.g. 1 hr 30 min" }
+              - { label: "Total time", name: "total", widget: "string", hint: "e.g. 1 hr 45 min" }
+              - { label: "Serves", name: "serves", widget: "number", value_type: "int", min: 1 }
+              - { label: "Intro paragraph", name: "lede", widget: "text" }
+              - label: "Ingredients"
+                name: "ingredients"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Ingredient", name: "name", widget: "string" }
+                  - { label: "US quantity", name: "usQty", widget: "number", value_type: "float", required: false }
+                  - { label: "US unit", name: "usUnit", widget: "string", required: false, hint: "cup, tbsp, tsp, lb, oz — leave empty for whole items" }
+                  - { label: "Metric quantity", name: "metricQty", widget: "number", value_type: "float", required: false }
+                  - { label: "Metric unit", name: "metricUnit", widget: "string", required: false, hint: "g, kg, ml, l — leave empty for whole items" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Step title", name: "title", widget: "string" }
+                  - { label: "Step text", name: "text", widget: "text" }
+              - label: "Teresa's tips"
+                name: "tips"
+                widget: "list"
+                field: { label: "Tip", name: "tip", widget: "string" }
+              - label: "Nutrition (per serving — leave a field empty to hide it)"
+                name: "nutrition"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Calories", name: "calories", widget: "string", required: false }
+                  - { label: "Protein", name: "protein", widget: "string", required: false }
+                  - { label: "Carbs", name: "carbs", widget: "string", required: false }
+                  - { label: "Fat", name: "fat", widget: "string", required: false }

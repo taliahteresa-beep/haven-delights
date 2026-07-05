@@ -767,239 +767,8 @@
    To use your own photos later: give a recipe an `img` URL and
    the card/modal will show it instead of the illustration.
    ============================================================ */
-const RECIPES = [
-  {
-    id:"stew", cat:"Mains", ill:"ill-stew",
-    title:"Slow-Braised Beef & Root Vegetable Stew",
-    desc:"Fork-tender beef and sweet winter roots in a glossy red-wine gravy.",
-    rating:4.9, reviews:214, prep:"25 min", cook:"2 hr 35 min", total:"3 hr", serves:6,
-    lede:"This is the pot I put on when the afternoon turns grey. Brown the beef properly, let it go low and slow, and the gravy turns deep and glossy on its own.",
-    ingredients:[
-      {name:"beef chuck, cubed", us:[1.5,"lb"], metric:[700,"g"]},
-      {name:"plain flour", us:[3,"tbsp"], metric:[24,"g"]},
-      {name:"olive oil", us:[2,"tbsp"], metric:[30,"ml"]},
-      {name:"onion, diced", us:[1,""], metric:[1,""]},
-      {name:"garlic cloves, crushed", us:[3,""], metric:[3,""]},
-      {name:"carrots, chunked", us:[3,""], metric:[3,""]},
-      {name:"parsnips, chunked", us:[2,""], metric:[2,""]},
-      {name:"tomato paste", us:[2,"tbsp"], metric:[32,"g"]},
-      {name:"dry red wine", us:[1,"cup"], metric:[240,"ml"]},
-      {name:"beef stock", us:[2,"cup"], metric:[480,"ml"]},
-      {name:"bay leaves", us:[2,""], metric:[2,""]},
-      {name:"fresh thyme", us:[4,"sprig"], metric:[4,"sprig"]}
-    ],
-    steps:[
-      ["Dry & dredge","Pat the beef very dry, season well, and toss in the flour until lightly coated."],
-      ["Sear in batches","Heat the oil and brown the beef hard on all sides, in batches so it colours rather than steams. Set aside."],
-      ["Build the base","Soften the onion in the same pot, add garlic and tomato paste, and cook a minute until it smells sweet and jammy."],
-      ["Deglaze","Pour in the wine, scraping up every brown bit from the bottom, and let it reduce by half."],
-      ["Braise low","Return the beef, add stock, bay, and thyme, cover, and simmer gently for 2 hours until the beef is nearly tender."],
-      ["Add the roots","Stir in carrots and parsnips and cook uncovered 30–40 minutes more, until everything is soft and the gravy coats a spoon."]
-    ],
-    tips:["Brown deeply — that dark crust is where the whole flavour of the gravy comes from.","No wine? Use all stock plus a spoon of balsamic for depth.","Even better the next day; the flavour rounds out overnight."],
-    nutri:{Calories:"absent",Protein:"38 g",Carbs:"22 g",Fat:"19 g"}
-  },
-  {
-    id:"sourdough", cat:"Baking", ill:"ill-sourdough",
-    title:"No-Knead Rustic Sourdough Loaf",
-    desc:"A crackly crust and open, tangy crumb from a fuss-free overnight rise.",
-    rating:4.8, reviews:301, prep:"20 min", cook:"45 min", total:"18 hr", serves:8,
-    lede:"You don't need to knead and you don't need to hover. Time does the work here — mix in the evening, bake to a deep crust the next day.",
-    ingredients:[
-      {name:"bread flour", us:[3.5,"cup"], metric:[500,"g"]},
-      {name:"active sourdough starter", us:[0.5,"cup"], metric:[100,"g"]},
-      {name:"warm water", us:[1.5,"cup"], metric:[350,"ml"]},
-      {name:"fine sea salt", us:[2,"tsp"], metric:[10,"g"]},
-      {name:"rice flour, for dusting", us:[2,"tbsp"], metric:[16,"g"]}
-    ],
-    steps:[
-      ["Mix the dough","Stir starter into the warm water, then mix in the flour and salt until no dry patches remain. It will be shaggy."],
-      ["Fold, don't knead","Over the next 2 hours, do four sets of stretch-and-folds, 30 minutes apart, then cover."],
-      ["Long rise","Let it rise at room temperature until roughly doubled and airy, about 8–12 hours."],
-      ["Shape","Tip out, shape into a tight round, and rest seam-up in a floured banneton for 1 hour."],
-      ["Preheat hot","Heat a Dutch oven at 475°F / 245°C for 30 minutes so it's screaming hot."],
-      ["Score & bake","Score the top, bake covered 25 minutes, then uncovered 18–20 minutes until deeply golden. Cool fully before slicing."]
-    ],
-    tips:["Your starter should be bubbly and float in water before you begin.","Cool completely — cutting warm bread makes the crumb gummy.","A cast-iron pot traps steam for that bakery crust."],
-    nutri:{Calories:"absent",Protein:"9 g",Carbs:"48 g",Fat:"1 g"}
-  },
-  {
-    id:"galette", cat:"Baking", ill:"ill-galette",
-    title:"Summer Tomato & Basil Galette",
-    desc:"A free-form tart with a buttery crust, ripe tomatoes and melting cheese.",
-    rating:4.7, reviews:156, prep:"25 min", cook:"40 min", total:"1 hr 20 min", serves:6,
-    lede:"The lazy cook's tart — no tin, no fluting, just a rustic fold of pastry around the best tomatoes you can find. Salt them first so the crust stays crisp.",
-    ingredients:[
-      {name:"plain flour", us:[1.25,"cup"], metric:[180,"g"]},
-      {name:"cold butter, cubed", us:[0.5,"cup"], metric:[115,"g"]},
-      {name:"ice water", us:[3,"tbsp"], metric:[45,"ml"]},
-      {name:"ripe tomatoes, sliced", us:[1.25,"lb"], metric:[560,"g"]},
-      {name:"ricotta", us:[0.75,"cup"], metric:[185,"g"]},
-      {name:"grated parmesan", us:[0.33,"cup"], metric:[35,"g"]},
-      {name:"fresh basil", us:[0.5,"cup"], metric:[12,"g"]},
-      {name:"egg, for glaze", us:[1,""], metric:[1,""]}
-    ],
-    steps:[
-      ["Make the pastry","Rub butter into the flour with a pinch of salt until crumbly, add ice water, and bring together. Chill 30 minutes."],
-      ["Salt the tomatoes","Lay the slices on paper towels, salt lightly, and leave 15 minutes to draw out water. Pat dry."],
-      ["Roll & fill","Roll pastry into a rough circle, spread ricotta and parmesan in the centre, leaving a 2-inch border."],
-      ["Arrange","Fan the tomato slices over the cheese and tuck torn basil between them."],
-      ["Fold & glaze","Fold the border up over the edge, pleating as you go, and brush the pastry with beaten egg."],
-      ["Bake","Bake at 400°F / 200°C for 38–42 minutes until the crust is deep gold. Finish with more basil."]
-    ],
-    tips:["Salting the tomatoes is the difference between crisp and soggy — don't skip it.","Keep the butter cold; warm pastry loses its flake.","Great warm or at room temperature for a picnic."],
-    nutri:{Calories:"absent",Protein:"11 g",Carbs:"26 g",Fat:"22 g"}
-  },
-  {
-    id:"chicken", cat:"Mains", ill:"ill-chicken",
-    title:"Herb-Roasted Garlic Chicken",
-    desc:"Crisp-skinned roast chicken with lemon, garlic and a pan of soft herbs.",
-    rating:4.9, reviews:428, prep:"15 min", cook:"1 hr 15 min", total:"1 hr 30 min", serves:4,
-    lede:"The Sunday anchor. Butter under the skin, a lemon in the cavity, and a hot oven — that's the whole trick to juicy meat and shatter-crisp skin.",
-    ingredients:[
-      {name:"whole chicken", us:[4,"lb"], metric:[1.8,"kg"]},
-      {name:"softened butter", us:[4,"tbsp"], metric:[57,"g"]},
-      {name:"garlic cloves, minced", us:[4,""], metric:[4,""]},
-      {name:"lemon, halved", us:[1,""], metric:[1,""]},
-      {name:"fresh rosemary", us:[2,"tbsp"], metric:[6,"g"]},
-      {name:"fresh thyme", us:[1,"tbsp"], metric:[3,"g"]},
-      {name:"olive oil", us:[1,"tbsp"], metric:[15,"ml"]},
-      {name:"sea salt", us:[1.5,"tsp"], metric:[9,"g"]}
-    ],
-    steps:[
-      ["Dry the bird","Pat the chicken completely dry, inside and out — dry skin is crisp skin."],
-      ["Herb butter","Mash butter with garlic, chopped herbs, and salt, then push most of it under the breast skin."],
-      ["Season & stuff","Rub the outside with oil and the rest of the butter, and tuck the lemon halves inside."],
-      ["Truss loosely","Tie the legs together and tuck the wing tips under so it roasts evenly."],
-      ["Roast hot","Roast at 425°F / 220°C for about 1 hour 15 minutes, until the thigh juices run clear (74°C internal)."],
-      ["Rest","Rest 15 minutes before carving so the juices settle back into the meat."]
-    ],
-    tips:["Let the chicken sit uncovered in the fridge a few hours first for even crispier skin.","Save the carcass — it makes the beef stew's cousin, a golden stock.","No thermometer? Juices at the thigh joint should run clear, not pink."],
-    nutri:{Calories:"absent",Protein:"41 g",Carbs:"2 g",Fat:"28 g"}
-  },
-  {
-    id:"oats", cat:"Breakfast", ill:"ill-oats",
-    title:"Baked Oats with Pear & Honey",
-    desc:"Warm, custardy baked oats with soft pears and a drizzle of honey.",
-    rating:4.6, reviews:189, prep:"10 min", cook:"35 min", total:"45 min", serves:4,
-    lede:"Somewhere between porridge and cake. Assemble it half-asleep, slide it in the oven, and breakfast makes itself while the coffee brews.",
-    ingredients:[
-      {name:"rolled oats", us:[2,"cup"], metric:[180,"g"]},
-      {name:"milk", us:[2,"cup"], metric:[480,"ml"]},
-      {name:"egg", us:[1,""], metric:[1,""]},
-      {name:"honey", us:[3,"tbsp"], metric:[63,"g"]},
-      {name:"ripe pears, sliced", us:[2,""], metric:[2,""]},
-      {name:"baking powder", us:[1,"tsp"], metric:[5,"g"]},
-      {name:"ground cinnamon", us:[1,"tsp"], metric:[3,"g"]},
-      {name:"vanilla extract", us:[1,"tsp"], metric:[5,"ml"]}
-    ],
-    steps:[
-      ["Heat the oven","Preheat to 350°F / 180°C and butter a small baking dish."],
-      ["Whisk the custard","Whisk milk, egg, honey, vanilla, cinnamon, and baking powder until smooth."],
-      ["Combine","Stir in the oats and half the pears, then pour into the dish."],
-      ["Top","Fan the remaining pear slices over the surface and drizzle with a little extra honey."],
-      ["Bake","Bake 32–36 minutes until set in the middle and golden at the edges. Rest 5 minutes before spooning out."]
-    ],
-    tips:["Swap pears for apple or berries with the seasons.","A spoon of yoghurt on top turns it into pudding.","Leftovers reheat beautifully — make a double batch."],
-    nutri:{Calories:"absent",Protein:"12 g",Carbs:"52 g",Fat:"8 g"}
-  },
-  {
-    id:"cornbread", cat:"Baking", ill:"ill-cornbread",
-    title:"Buttermilk Skillet Cornbread",
-    desc:"Golden, tender cornbread with crisp edges from a screaming-hot skillet.",
-    rating:4.8, reviews:224, prep:"10 min", cook:"25 min", total:"35 min", serves:8,
-    lede:"Poured into a hot, buttered skillet so the edges fry crisp while the middle stays soft. Barely sweet — the way it's meant to go beside a bowl of stew.",
-    ingredients:[
-      {name:"cornmeal", us:[1.5,"cup"], metric:[210,"g"]},
-      {name:"plain flour", us:[1,"cup"], metric:[125,"g"]},
-      {name:"buttermilk", us:[1.5,"cup"], metric:[360,"ml"]},
-      {name:"eggs", us:[2,""], metric:[2,""]},
-      {name:"melted butter", us:[6,"tbsp"], metric:[85,"g"]},
-      {name:"honey", us:[2,"tbsp"], metric:[42,"g"]},
-      {name:"baking powder", us:[1,"tbsp"], metric:[14,"g"]},
-      {name:"fine salt", us:[1,"tsp"], metric:[6,"g"]}
-    ],
-    steps:[
-      ["Heat the skillet","Put a cast-iron skillet in the oven and preheat both to 425°F / 220°C."],
-      ["Dry then wet","Whisk the dry ingredients in one bowl; whisk buttermilk, eggs, honey, and most of the butter in another."],
-      ["Combine gently","Fold wet into dry until just barely mixed — a few lumps are fine, overmixing makes it tough."],
-      ["Sizzle","Carefully swirl the last of the butter into the hot skillet, then pour in the batter — it should hiss."],
-      ["Bake","Bake 22–25 minutes until golden and a skewer comes out clean. Serve warm, straight from the pan."]
-    ],
-    tips:["The hot skillet is everything — that's what crisps the edge.","No buttermilk? Stir a spoon of lemon juice into regular milk and wait 5 minutes.","Add a diced chilli or a handful of corn for a savoury twist."],
-    nutri:{Calories:"absent",Protein:"7 g",Carbs:"38 g",Fat:"13 g"}
-  },
-  {
-    id:"cake", cat:"Sweets", ill:"ill-cake",
-    title:"Lemon & Olive Oil Cake",
-    desc:"A moist, fragrant cake with bright lemon and a soft olive-oil crumb.",
-    rating:4.9, reviews:267, prep:"15 min", cook:"45 min", total:"1 hr", serves:10,
-    lede:"Olive oil keeps this cake moist for days and lets the lemon sing. One bowl, a whisk, and no mixer required.",
-    ingredients:[
-      {name:"plain flour", us:[1.75,"cup"], metric:[220,"g"]},
-      {name:"sugar", us:[1,"cup"], metric:[200,"g"]},
-      {name:"extra-virgin olive oil", us:[0.75,"cup"], metric:[180,"ml"]},
-      {name:"eggs", us:[3,""], metric:[3,""]},
-      {name:"milk", us:[0.5,"cup"], metric:[120,"ml"]},
-      {name:"lemons, zested & juiced", us:[2,""], metric:[2,""]},
-      {name:"baking powder", us:[1.5,"tsp"], metric:[7,"g"]},
-      {name:"fine salt", us:[0.5,"tsp"], metric:[3,"g"]}
-    ],
-    steps:[
-      ["Prep the tin","Preheat to 350°F / 180°C and line a 9-inch round tin."],
-      ["Whisk the wet","Whisk sugar, eggs, and lemon zest until pale, then stream in the olive oil, milk, and lemon juice."],
-      ["Fold the dry","Sift in flour, baking powder, and salt, and fold until just combined."],
-      ["Bake","Pour in and bake 42–46 minutes until golden and a skewer comes out clean."],
-      ["Finish","Cool in the tin 10 minutes, then dust with sugar or brush with a little warmed honey."]
-    ],
-    tips:["Use a fruity olive oil you'd happily eat — it's the headline flavour.","Zest before you juice; it's far easier that way.","Keeps moist under a cloche for 3–4 days."],
-    nutri:{Calories:"absent",Protein:"5 g",Carbs:"34 g",Fat:"16 g"}
-  },
-  {
-    id:"jam", cat:"Preserves", ill:"ill-jam",
-    title:"Wild Blackberry Jam",
-    desc:"A small-batch jam with deep berry flavour and a soft, spoonable set.",
-    rating:4.7, reviews:143, prep:"15 min", cook:"30 min", total:"45 min", serves:24,
-    lede:"Made the old way with just fruit, sugar, and lemon — no pectin sachets. Small batches set best and keep the flavour bright and fresh.",
-    ingredients:[
-      {name:"blackberries", us:[4,"cup"], metric:[600,"g"]},
-      {name:"sugar", us:[2,"cup"], metric:[400,"g"]},
-      {name:"lemon, juiced", us:[1,""], metric:[1,""]},
-      {name:"water", us:[2,"tbsp"], metric:[30,"ml"]}
-    ],
-    steps:[
-      ["Chill a plate","Put a small plate in the freezer — you'll use it to test the set."],
-      ["Macerate","Toss the berries with sugar and lemon juice and let them sit 15 minutes until juicy."],
-      ["Cook down","Bring to a boil with the water, then simmer, stirring often, for about 20 minutes until thick and glossy."],
-      ["Test the set","Drop a little on the cold plate; if it wrinkles when pushed, it's ready. If not, cook a few minutes more."],
-      ["Jar it","Skim any foam, ladle into clean warm jars, seal, and cool. Keeps 3 weeks in the fridge."]
-    ],
-    tips:["Under-ripe berries carry more natural pectin and help the set.","Keep the batch small — big pots of jam take forever and dull the flavour.","For a seedless jam, press half the fruit through a sieve first."],
-    nutri:{Calories:"absent",Protein:"0 g",Carbs:"18 g",Fat:"0 g"}
-  },
-  {
-    id:"anko", cat:"Sweets", ill:"ill-anko", img:"images/anko.jpg",
-    title:"Sweet Red Bean Paste (Anko)",
-    desc:"Silky-sweet azuki bean paste — the soul of so many Japanese sweets.",
-    rating:4.8, reviews:143, prep:"10 min", cook:"1 hr 30 min", total:"1 hr 40 min", serves:20,
-    lede:"A little nod to the recipe that inspired this whole site. Just beans, sugar, and salt, cooked patiently until thick and glossy. Leave it chunky or blend it smooth.",
-    ingredients:[
-      {name:"dried azuki beans", us:[7,"oz"], metric:[200,"g"]},
-      {name:"sugar", us:[0.75,"cup"], metric:[175,"g"]},
-      {name:"kosher salt", us:[0.5,"tsp"], metric:[3,"g"]},
-      {name:"water, to cover", us:[6,"cup"], metric:[1.4,"l"]}
-    ],
-    steps:[
-      ["Rinse & parboil","Rinse the beans, cover generously with water, bring to a boil, then drain to remove any bitterness."],
-      ["Simmer tender","Cover with fresh water and simmer gently 60–90 minutes, topping up water so they stay submerged, until a bean mashes easily."],
-      ["Sweeten","Drain, return to the pot over low heat, and stir in the sugar in two additions, then the salt."],
-      ["Cook to a paste","Keep stirring until you can draw a line across the bottom of the pot with a spatula — it thickens more as it cools."],
-      ["Chunky or smooth","Leave it as-is for chunky tsubuan, or blend to a fine paste for smooth koshian. Spread on a tray to cool."]
-    ],
-    tips:["Modern beans don't need overnight soaking — start straight away.","A pinch of salt makes the sweetness taste rounder, not saltier.","Stop at the line test; carry-over heat firms it up as it cools."],
-    nutri:{Calories:"absent",Protein:"1 g",Carbs:"10 g",Fat:"0 g"}
-  }
-];
+/* Recipes now live in recipes.json - edit them at /admin or on GitHub. */
+let RECIPES = [];
 
 /* ---------- helpers ---------- */
 const $ = (s,el=document)=>el.querySelector(s);
@@ -1108,9 +877,9 @@ let current=null, unit="us", scale=1, lastFocus=null;
 function renderIngredients(){
   const ul=$("#ingList"); ul.innerHTML="";
   current.ingredients.forEach((ing,idx)=>{
-    const pair = unit==="us"?ing.us:ing.metric;
-    const qty = pair[0]!=null ? fmtQty(pair[0]*scale) : "";
-    const u = pair[1]||"";
+    const q = unit==="us"?ing.usQty:ing.metricQty;
+    const qty = q!=null ? fmtQty(q*scale) : "";
+    const u = (unit==="us"?ing.usUnit:ing.metricUnit)||"";
     const li=document.createElement("li");
     li.dataset.done = li.dataset.done||"0";
     li.innerHTML = `
@@ -1157,9 +926,9 @@ function openRecipe(id){
 
   // steps
   const ol=$("#stepList"); ol.innerHTML="";
-  r.steps.forEach(([t,body])=>{
+  r.steps.forEach(st=>{
     const li=document.createElement("li");
-    li.innerHTML=`<span class="st-title">${t}</span><p>${body}</p>`;
+    li.innerHTML=`<span class="st-title">${st.title}</span><p>${st.text}</p>`;
     ol.appendChild(li);
   });
 
@@ -1169,8 +938,9 @@ function openRecipe(id){
 
   // nutrition
   const nu=$("#nutri"); nu.innerHTML="";
-  Object.entries(r.nutri).forEach(([k,v])=>{
-    if(v==="absent") return;
+  const n=r.nutrition||{};
+  [["Calories",n.calories],["Protein",n.protein],["Carbs",n.carbs],["Fat",n.fat]].forEach(([k,v])=>{
+    if(!v || v==="absent") return;
     const s=document.createElement("span"); s.innerHTML=`${k} <b>${v}</b>`; nu.appendChild(s);
   });
 
@@ -1282,8 +1052,14 @@ $("#nlBtn").addEventListener("click",()=>{
 
 /* ---------- init ---------- */
 $("#year").textContent=new Date().getFullYear();
-$("#statCount").textContent=RECIPES.length;
-renderGrid();
+fetch("recipes.json")
+  .then(r=>r.json())
+  .then(data=>{
+    RECIPES = data.recipes||[];
+    $("#statCount").textContent=RECIPES.length;
+    renderGrid();
+  })
+  .catch(()=>{ $("#empty").hidden=false; });
 </script>
 </body>
 </html>
