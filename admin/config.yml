@@ -29,7 +29,7 @@ collections:
               - label: "Illustration (used when no photo is set)"
                 name: "ill"
                 widget: "select"
-                options: ["ill-stew", "ill-sourdough", "ill-galette", "ill-jam", "ill-cornbread", "ill-chicken", "ill-oats", "ill-cake", "ill-anko"]
+                options: ["ill-stew", "ill-sourdough", "ill-galette", "ill-jam", "ill-cornbread", "ill-chicken", "ill-oats", "ill-cake", "ill-anko", "ill-pancake"]
               - { label: "Photo or video (optional — overrides the illustration; jpg/png/gif/mp4)", name: "img", widget: "file", required: false, allow_multiple: false }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Card description", name: "desc", widget: "string" }
