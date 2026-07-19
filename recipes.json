@@ -338,42 +338,6 @@
         "Stop at the line test; carry-over heat firms it up as it cools."
       ],
       "nutrition": { "calories": "", "protein": "1 g", "carbs": "10 g", "fat": "0 g" }
-    },
-    {
-      "id": "pancakes",
-      "cat": "Breakfast",
-      "ill": "ill-pancake",
-      "img": "",
-      "title": "Classic Buttermilk Pancakes",
-      "desc": "Fluffy, tender pancakes with a golden griddle crust — the everyday stack.",
-      "rating": 4.7,
-      "reviews": 176,
-      "prep": "10 min",
-      "cook": "15 min",
-      "total": "25 min",
-      "serves": 4,
-      "lede": "The pancake fundamentals, no fuss required. Whisk it loose, don't overwork it, and let a hot pan do the rest.",
-      "ingredients": [
-        { "name": "plain flour", "usQty": 2, "usUnit": "cup", "metricQty": 250, "metricUnit": "g" },
-        { "name": "baking soda", "usQty": 0.5, "usUnit": "tsp", "metricQty": 3, "metricUnit": "g" },
-        { "name": "salt", "usQty": 0.5, "usUnit": "tsp", "metricQty": 3, "metricUnit": "g" },
-        { "name": "sugar", "usQty": 1, "usUnit": "tsp", "metricQty": 4, "metricUnit": "g" },
-        { "name": "egg", "usQty": 1, "usUnit": "", "metricQty": 1, "metricUnit": "" },
-        { "name": "buttermilk", "usQty": 1, "usUnit": "cup", "metricQty": 250, "metricUnit": "ml" }
-      ],
-      "steps": [
-        { "title": "Sift the dry ingredients", "text": "Sift the flour, baking soda, salt, and sugar together into a bowl." },
-        { "title": "Make a well", "text": "Make a hole in the middle and crack in the egg." },
-        { "title": "Mix quickly", "text": "Break the yolk and pour in the buttermilk, mixing quickly until you have a sticky batter." },
-        { "title": "Don't overwork it", "text": "Stop as soon as it comes together — beating brings out the gluten in the flour, which stops the pancakes rising." },
-        { "title": "Fry & serve", "text": "Fry spoonfuls of batter in a hot griddle pan and serve right away, while they're still hot." }
-      ],
-      "tips": [
-        "A few lumps in the batter are exactly what you want — smooth means overmixed.",
-        "No buttermilk? Stir a spoon of lemon juice into regular milk and let it sit 5 minutes.",
-        "Wait for bubbles to cover the surface before you flip — that's the pan telling you it's ready."
-      ],
-      "nutrition": { "calories": "", "protein": "7 g", "carbs": "40 g", "fat": "5 g" }
     }
   ]
 }
